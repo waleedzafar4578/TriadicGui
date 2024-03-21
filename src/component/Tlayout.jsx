@@ -68,13 +68,26 @@ const Tlayout = () => {
         setTheme(selectedTheme);
     };
     const handleSave = () => {
+        // Prompt the user for a filename
+        const filename = window.prompt('Enter filename:', 'editor-content.txt');
+        if (!filename) return; // Exit if the user cancels the prompt
+
+        // Create a Blob from the input message
         const blob = new Blob([inputMessage], { type: 'text/plain' });
+
+        // Create a URL for the Blob
         const url = window.URL.createObjectURL(blob);
+
+        // Create an <a> element to trigger the download
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'editor-content.txt';
+        a.download = filename; // Set the filename from the prompt
         document.body.appendChild(a);
+
+        // Trigger the download
         a.click();
+
+        // Clean up
         window.URL.revokeObjectURL(url);
         document.body.removeChild(a);
     };
@@ -108,14 +121,14 @@ const Tlayout = () => {
                         value={inputMessage}
                         options={{wordWrap: 'on', wordWrapColumn: 80, fontSize: fontSize}}
                         onChange={handleEditorChange}
-                        editorDidMount={(editor, monaco) => {
+                        editorDidMount={(editor) => {
                             editorRef.current = editor;
                         }}
                         className="rounded-editor"
                     />
                 </div>
                 <div className={"column"}>
-                    <h1>Result:</h1>
+                    <h3>Result:</h3>
                     <h4>{outputMessage}</h4>
                 </div>
             </div>
