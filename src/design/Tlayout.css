@@ -1,0 +1,53 @@
+/* Create three equal columns that float next to each other */
+.column {
+    float: left;
+    margin: 3px;
+    width: 49%;
+    background: #2E4F4F;
+    height: 500px;
+    border: #2C3333;
+    border-radius: 3px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 1200px) {
+    .column {
+        width: 100%;
+
+    }
+}
+input{
+    border-radius: 18px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.custom-file-upload {
+    border: 1px solid #353535;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #302f2f;
+    color: #333;
+}
+
+.custom-file-upload:hover {
+    background-color: #0e0e0e;
+}
+.rounded-editor {
+    border-radius: 100%;
+    border: 1px solid #864343; /* Optional: Add border for better visualization */
+}

@@ -1,0 +1,23 @@
+#theader{
+    color: #CBE4DE;
+    background: #2E4F4F;
+    text-align: center;
+    padding: 20px;
+    top: 0;
+    text-decoration: #0E8388;
+}
+.connection-status {
+    color: #CBE4DE;
+    background:#2E4F4F ;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.connected {
+    background-color: #2E4F4F; /* Green color for connected status */
+}
+
+.disconnected {
+    background-color: #e74c3c; /* Red color for disconnected status */
+}
