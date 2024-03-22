@@ -51,3 +51,6 @@ input{
     border-radius: 100%;
     border: 1px solid #864343; /* Optional: Add border for better visualization */
 }
+#btt{
+    flex-direction: row;
+}

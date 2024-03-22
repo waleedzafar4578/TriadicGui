@@ -1,10 +1,14 @@
-import  { useState, useRef, useEffect } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import MonacoEditor from 'react-monaco-editor';
 import * as monaco from 'monaco-editor';
 import customLanguage from "./CustomLan.js";
 import "../design/Tlayout.css"
+import OutputWindow from "./Output.jsx";
+
+
 const Tlayout = () => {
     const [inputMessage, setInputMessage] = useState('');
+    const [InputStatus,setInputStatus]=useState('');
     const [outputMessage, setOutputMessage] = useState('');
     const editorRef = useRef(null);
     const [fontSize, setFontSize] = useState(14);
@@ -27,8 +31,7 @@ const Tlayout = () => {
         const selection = editor.getSelection();
         if (!selection) return '';
 
-        const selectedText = editor.getModel().getValueInRange(selection);
-        return selectedText;
+        return editor.getModel().getValueInRange(selection);
     };
 
     // Function to handle button click
@@ -49,6 +52,8 @@ const Tlayout = () => {
 
             const data = await response.json();
             setOutputMessage(data.reversed_message);
+            setInputStatus(data.status);
+
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -69,7 +74,7 @@ const Tlayout = () => {
     };
     const handleSave = () => {
         // Prompt the user for a filename
-        const filename = window.prompt('Enter filename:', 'editor-content.txt');
+        const filename = window.prompt('Enter filename:', 'Query.tri');
         if (!filename) return; // Exit if the user cancels the prompt
 
         // Create a Blob from the input message
@@ -100,16 +105,19 @@ const Tlayout = () => {
         };
         reader.readAsText(file);
     };
+
     return (
         <>
-            <button onClick={() => handleButtonClick(true)}>Run</button>
-            <button onClick={increaseFontSize}>Inc Font</button>
-            <button onClick={decreaseFontSize}>Dec Font</button>
-            <button className="dropdown-item" onClick={() => changeTheme('hc-black')}>HC-Black</button>
-            <button className="dropdown-item" onClick={() => changeTheme('vs-dark')}>VS-Dark</button>
-            <button className="dropdown-item" onClick={() => changeTheme('vs-light')}>VS-light</button>
-            <button onClick={handleSave}>Save</button>
-            <input type="file" onChange={handleLoad}  />
+            <div id={"btt"}>
+                <button onClick={() => handleButtonClick(true)}>Run</button>
+                <button onClick={increaseFontSize}>Inc Font</button>
+                <button onClick={decreaseFontSize}>Dec Font</button>
+                <button onClick={() => changeTheme('hc-black')}>HC-Black</button>
+                <button onClick={() => changeTheme('vs-dark')}>VS-Dark</button>
+                <button onClick={() => changeTheme('vs-light')}>VS-light</button>
+                <button onClick={handleSave}>Save</button>
+                <input type="file" onChange={handleLoad}/>
+            </div>
             <div className={"row"}>
 
                 <div className={"column"}>
@@ -128,8 +136,7 @@ const Tlayout = () => {
                     />
                 </div>
                 <div className={"column"}>
-                    <h3>Result:</h3>
-                    <h4>{outputMessage}</h4>
+                   <OutputWindow status={InputStatus} output={outputMessage}/>
                 </div>
             </div>
         </>
