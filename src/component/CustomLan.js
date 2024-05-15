@@ -6,6 +6,7 @@ const customLanguage = {
             [/\bRENAME\b/, 'keyword'],
             [/\bFROM\b/, 'keyword'],
             [/\bWHERE\b/, 'keyword'],
+            [/\bSEARCH\b/, 'keyword'],
             [/\bJOIN\b/, 'keyword'],
             [/\bLEFT\b/, 'keyword'],
             [/\bRIGHT\b/, 'keyword'],

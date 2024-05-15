@@ -41,23 +41,27 @@ const Tlayout = () => {
     };
 
     const fetchData = async (textToSend) => {
+        const stoken = localStorage.getItem('token');
+        console.log(stoken);
         try {
-            const response = await fetch('http://localhost:8080/process_json', {
+            const response = await fetch('http://localhost:8080/pq', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ message: textToSend }),
+                body: JSON.stringify({ token:stoken, query: textToSend }),
             });
 
             const data = await response.json();
-            setOutputMessage(data.reversed_message);
+            console.log(data);
+            setOutputMessage(data.query_information);
             setInputStatus(data.status);
 
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
+
     // Function to handle button click to increase font size
     const increaseFontSize = () => {
         setFontSize(fontSize + 1);
