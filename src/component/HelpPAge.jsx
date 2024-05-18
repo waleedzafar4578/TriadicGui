@@ -16,7 +16,7 @@ function HelpPage() {
 
     return (
         <div>
-            <h1>Help Page</h1>
+            <h1>Help Page jawad</h1>
             {helpData && <p>{helpData.message}</p>}
         </div>
     );
