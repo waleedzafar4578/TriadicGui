@@ -7,6 +7,7 @@ import OutputWindow from "./Output.jsx";
 
 
 const Tlayout = () => {
+    const [isDropdownOpen , setIsDropdownOpen] = useState(false);
     const [inputMessage, setInputMessage] = useState('');
     const [InputStatus,setInputStatus]=useState('');
     const [outputMessage, setOutputMessage] = useState('');
@@ -17,6 +18,12 @@ const Tlayout = () => {
         monaco.languages.register({ id: 'customLanguage' });
         monaco.languages.setMonarchTokensProvider('customLanguage', customLanguage);
     }, []);
+
+    //Handling Dropdown Opening and Closing
+    function handlingDropdownToggle()
+    {
+        setIsDropdownOpen(!isDropdownOpen);
+    }
 
     // Function to handle editor content change
     const handleEditorChange = (newValue) => {
@@ -116,11 +123,19 @@ const Tlayout = () => {
                 <button onClick={() => handleButtonClick(true)}>Run</button>
                 <button onClick={increaseFontSize}>Inc Font</button>
                 <button onClick={decreaseFontSize}>Dec Font</button>
-                <button onClick={() => changeTheme('hc-black')}>HC-Black</button>
+                {/* <button onClick={() => changeTheme('hc-black')}>HC-Black</button>
                 <button onClick={() => changeTheme('vs-dark')}>VS-Dark</button>
-                <button onClick={() => changeTheme('vs-light')}>VS-light</button>
+                <button onClick={() => changeTheme('vs-light')}>VS-light</button> */}
+                <button className='drop-down-button' onClick={handlingDropdownToggle}>Themes</button>
+                {isDropdownOpen && (
+                    <ul className='drop-down-menu'>
+                        <li onClick={() => changeTheme('hc-black')}>HC-Black</li>
+                        <li onClick={() => changeTheme('vs-dark')}>VS-Dark</li>
+                        <li onClick={() => changeTheme('vs-light')}>VS-Light</li>
+                    </ul>
+                )}
                 <button onClick={handleSave}>Save</button>
-                <input type="file" onChange={handleLoad}/>
+                <input className='handleLoad'type="file" onChange={handleLoad}/>
             </div>
             <div className={"row"}>
 

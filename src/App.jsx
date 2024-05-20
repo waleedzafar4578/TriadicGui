@@ -1,15 +1,22 @@
 import './App.css'
-import Theader from "./component/Theader.jsx";
-import Tfooter from "./component/Tfooter.jsx";
+// import Theader from "./component/Theader.jsx";
+// import Tfooter from "./component/Tfooter.jsx";
 import AppRouter from "./component/Tnavi.jsx";
 import Connection from "./component/Connection.jsx";
 import {useEffect, useState} from "react";
-import VerifyToken from "./component/TokenChecker.jsx";
+// import VerifyToken from "./component/TokenChecker.jsx";
+import Overview from './component/Overview.jsx';
+import EditorPage from './component/EditorPage.jsx';
 
 
 
 
 function App() {
+    const [isCreatingAccount , setIsCreatingAccount] = useState(false);
+    function handleCreatingAccount()
+    {
+        setIsCreatingAccount(!isCreatingAccount)
+    }
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -43,14 +50,15 @@ function App() {
 
 
   return (
-      <>
-          <Theader text={"TriadicSql Database"}/>
-          {isLoggedIn ? (
-              <AppRouter onLogout={handleLogout} />
-          ) : (
-              <Connection onLogin={handleLogin} />
-          )}
-      </>
+    //   <>
+    //       {isLoggedIn ? (
+    //           <AppRouter onLogout={handleLogout} />
+    //       ) : (
+    //           <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
+    //       )}
+    //   </>
+    // <Overview />
+    <EditorPage/>
   )
 }
 

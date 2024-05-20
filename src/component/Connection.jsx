@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
 // CreateAccount.js
 
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+import '../design/Connection.css'
 
 // eslint-disable-next-line react/prop-types
-function CreateAccount({ onCreateAccount }) {
+function CreateAccount({ onCreateAccount , loginPageRender }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -43,42 +45,48 @@ function CreateAccount({ onCreateAccount }) {
     };
 
     return (
-        <div>
-            <h2>Create Account</h2>
-            {error && <p>{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        Username:
+        <div className="create-account-section">
+            <div className='create-account-container'>
+                <h2>Create Account</h2>
+                {error && <p>{error}</p>}
+                <form onSubmit={handleSubmit}>
+                    <div>
                         <input
+                            className='userName'
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            placeholder='Username'
                         />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Password:
+                    </div>
+                    <div>
                         <input
+                            className='password'
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            placeholder='Password'
                         />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Confirm Password:
+                        
+                    </div>
+                    <div>    
                         <input
+                            className='confirmPassword'
                             type="password"
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
+                            placeholder='Confirm Password'
                         />
-                    </label>
-                </div>
-                <button type="submit">Create Account</button>
-            </form>
+                        
+                    </div>
+                    <button className='create-account' type="submit">Create Account</button>
+                    <a href='#' onClick={loginPageRender} className='alreadyAccount'>Already have an account? Login</a>
+                </form>
+            </div>
+            <div className="right">
+                {/* Logo */}
+                <h2>Triadic SQL DB</h2>
+            </div>
         </div>
     );
 }
@@ -86,7 +94,7 @@ function CreateAccount({ onCreateAccount }) {
 // Login.js
 
 
-function Login({ onLogin }) {
+function Login( {onLogin , createPageRender} ) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
@@ -127,42 +135,54 @@ function Login({ onLogin }) {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            {error && <p>{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        Username:
+        <div className="login">
+            <div className="left">
+                {/* Logo */}
+                <h2>Triadic SQL DB</h2>
+            </div>
+            <div className='login-container'>
+                <h2 className='heading'>Login</h2>
+             {error && <p>{error}</p>}
+                <form onSubmit={handleSubmit}>
+                    <div>
                         <input
+                            className='userName'
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            placeholder='Username'
                         />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Password:
+                    </div>
+                    <div>
                         <input
+                            className='password'
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            placeholder='Password'
                         />
-                    </label>
-                </div>
-                <button type="submit">Login</button>
-            </form>
+                    </div>
+                    <button className='login-button' type="submit">Login</button>
+                    <button className='create-account' onClick={createPageRender}>Create new account</button>
+                </form>
+            </div>
         </div>
     );
 }
 
-function Connection({ onLogin }) {
+function Connection( {onLogin , toggleRender , toggleFunction} ) {
     return (
-        <div>
-            <Login onLogin={onLogin} />
-            <p>Don't have an account? </p>
-        </div>
+        <>
+        {toggleRender? (
+            <div>
+                <CreateAccount loginPageRender={toggleFunction}/>
+            </div>
+        ): (
+            <div>
+                <Login onLogin={onLogin} createPageRender = {toggleFunction}/>
+            </div>
+        )}
+        </>
     );
 }
 
