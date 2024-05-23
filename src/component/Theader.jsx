@@ -29,7 +29,6 @@ function Theader(props){
 
     return (
     <div className={`connection-status ${isConnected ? 'connected' : 'disconnected'}`}>
-        {/* eslint-disable-next-line react/prop-types,no-undef */}
         {isConnected ? <header>{props.text}</header> : <header>{props.text}</header>}
     </div>
 )

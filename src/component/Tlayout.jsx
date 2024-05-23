@@ -4,9 +4,11 @@ import * as monaco from 'monaco-editor';
 import customLanguage from "./CustomLan.js";
 import "../design/Tlayout.css"
 import OutputWindow from "./Output.jsx";
+// import Dropdown from './Dropdown.jsx';
 
 
 const Tlayout = () => {
+    // const themeOptions = ['hc-black' , 'vs-light' , 'vs-dark']
     const [isDropdownOpen , setIsDropdownOpen] = useState(false);
     const [inputMessage, setInputMessage] = useState('');
     const [InputStatus,setInputStatus]=useState('');
@@ -129,11 +131,12 @@ const Tlayout = () => {
                 <button className='drop-down-button' onClick={handlingDropdownToggle}>Themes</button>
                 {isDropdownOpen && (
                     <ul className='drop-down-menu'>
-                        <li onClick={() => changeTheme('hc-black')}>HC-Black</li>
-                        <li onClick={() => changeTheme('vs-dark')}>VS-Dark</li>
-                        <li onClick={() => changeTheme('vs-light')}>VS-Light</li>
+                        <li className = 'dropdown-item' onClick={() => changeTheme('hc-black')}>HC-Black</li>
+                        <li className = 'dropdown-item' onClick={() => changeTheme('vs-dark')}>VS-Dark</li>
+                        <li className = 'dropdown-item' onClick={() => changeTheme('vs-light')}>VS-Light</li>
                     </ul>
                 )}
+                {/* <Dropdown options={themeOptions} handleSelect={changeTheme} buttonName={'Theme'}/> */}
                 <button onClick={handleSave}>Save</button>
                 <input className='handleLoad'type="file" onChange={handleLoad}/>
             </div>
@@ -142,7 +145,7 @@ const Tlayout = () => {
                 <div className={"column"}>
                     <MonacoEditor
                         width="100%"
-                        height="77VH"
+                        height="500px"
                         language="customLanguage"
                         theme={theme}
                         value={inputMessage}

@@ -9,7 +9,7 @@ import HelpPage from "./HelpPAge.jsx";
 
 import "../design/Tnavi.css"
 import Overview from "./Overview.jsx";
-import Connection from "./Connection.jsx";
+// import Connection from "./Connection.jsx";
 
 
 const AppRouter = () => {
