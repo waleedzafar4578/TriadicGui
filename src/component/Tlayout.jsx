@@ -9,6 +9,7 @@ import OutputWindow from "./Output.jsx";
 
 const Tlayout = () => {
     // const themeOptions = ['hc-black' , 'vs-light' , 'vs-dark']
+
     const [isDropdownOpen , setIsDropdownOpen] = useState(false);
     const [inputMessage, setInputMessage] = useState('');
     const [InputStatus,setInputStatus]=useState('');
@@ -21,6 +22,21 @@ const Tlayout = () => {
         monaco.languages.setMonarchTokensProvider('customLanguage', customLanguage);
     }, []);
 
+    useEffect(() => {
+        // Save content to local storage whenever it changes
+        if (inputMessage){
+            localStorage.setItem('editorContent', inputMessage);
+        }
+
+    }, [inputMessage]);
+
+    useEffect(() => {
+        // Load content from local storage if available
+        const savedContent = localStorage.getItem('editorContent');
+        if (savedContent) {
+            setInputMessage(savedContent);
+        }
+    }, []);
     //Handling Dropdown Opening and Closing
     function handlingDropdownToggle()
     {
@@ -30,6 +46,7 @@ const Tlayout = () => {
     // Function to handle editor content change
     const handleEditorChange = (newValue) => {
         setInputMessage(newValue);
+
     };
 
     // Function to get the selected text from the editor
@@ -115,6 +132,7 @@ const Tlayout = () => {
         const reader = new FileReader();
         reader.onload = () => {
             setInputMessage(reader.result);
+            localStorage.setItem('editorContent', reader.result);
         };
         reader.readAsText(file);
     };

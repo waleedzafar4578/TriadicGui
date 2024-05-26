@@ -38,6 +38,13 @@ function App() {
         console.log("Login Function token:")
         console.log(token);
         localStorage.setItem('token', token);
+
+        setTimeout(() => {
+            localStorage.removeItem('token');
+            console.log('Token removed from local storage after 2 minutes.');
+            window.location.reload();
+        }, 2 * 30 * 1000);
+
         setIsLoggedIn(true);
     };
 
@@ -50,15 +57,15 @@ function App() {
 
 
   return (
-    //   <>
-    //       {isLoggedIn ? (
-    //           <AppRouter onLogout={handleLogout} />
-    //       ) : (
-    //           <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
-    //       )}
-    //   </>
+       <>
+           {isLoggedIn ? (
+               <AppRouter onLogout={handleLogout} />
+           ) : (
+               <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
+           )}
+       </>
     // <Overview />
-    <EditorPage/>
+    //<EditorPage/>
   )
 }
 
