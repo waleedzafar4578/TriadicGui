@@ -60,6 +60,7 @@ const Tlayout = () => {
         return editor.getModel().getValueInRange(selection);
     };
 
+
     // Function to handle button click
     const handleButtonClick = (sendSelectedText) => {
         const textToSend = sendSelectedText ? getSelectedText() : inputMessage;
