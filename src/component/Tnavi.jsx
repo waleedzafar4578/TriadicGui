@@ -9,7 +9,7 @@ import HelpPage from "./HelpPAge.jsx";
 
 import "../design/Tnavi.css"
 import Overview from "./Overview.jsx";
-import Connection from "./Connection.jsx";
+// import Connection from "./Connection.jsx";
 
 
 const AppRouter = () => {
@@ -17,10 +17,10 @@ const AppRouter = () => {
         <Router>
             <nav>
                 <ul>
-                    <li><Link to="/">Overview</Link></li>
-                    <li><Link to="/editor">Play Ground</Link></li>
-                    <li><Link to="/result">Example</Link></li>
-                    <li><Link to="/help">Help</Link></li>
+                    <li className='menu-item'><Link to="/">Overview</Link></li>
+                    <li className='menu-item'><Link to="/editor">Play Ground</Link></li>
+                    <li className='menu-item'><Link to="/result">Example</Link></li>
+                    <li className='menu-item'><Link to="/help">Help</Link></li>
                 </ul>
             </nav>
             <Routes>
