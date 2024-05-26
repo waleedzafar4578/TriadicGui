@@ -43,7 +43,7 @@ function App() {
             localStorage.removeItem('token');
             console.log('Token removed from local storage after 2 minutes.');
             window.location.reload();
-        }, 2 * 30 * 1000);
+        }, 3 * 30 * 1000);
 
         setIsLoggedIn(true);
     };
@@ -54,7 +54,7 @@ function App() {
         localStorage.removeItem('token');
         setIsLoggedIn(false);
     };
-
+//asd
 
   return (
        <>
