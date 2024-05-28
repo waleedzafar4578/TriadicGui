@@ -1,19 +1,19 @@
 /* Create three equal columns that float next to each other */
 .column {
-    float: left;
+    /* float: left; */
     margin: 3px;
-    width: 49%;
+    width: 100vw;
     background: #2E4F4F;
-    height: 500px;
+    height: 50vh;
     border: #2C3333;
     border-radius: 3px;
 }
 
 /* Clear floats after the columns */
 .row:after {
-    content: "";
+    /* content: "";
     display: table;
-    clear: both;
+    clear: both; */
 }
 .drop-down-menu{
     position: absolute;
@@ -54,6 +54,8 @@
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
+    float:right;
+    margin-top: -2px;
 }
 .custom-file-upload {
     border: 1px solid #353535;

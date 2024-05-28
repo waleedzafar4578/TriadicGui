@@ -157,14 +157,15 @@ const Tlayout = () => {
                 )}
                 {/* <Dropdown options={themeOptions} handleSelect={changeTheme} buttonName={'Theme'}/> */}
                 <button onClick={handleSave}>Save</button>
-                <input className='handleLoad'type="file" onChange={handleLoad}/>
+                <button>Databases</button>
+                <input className='handleLoad' type="file" onChange={handleLoad}/>
             </div>
             <div className={"row"}>
 
                 <div className={"column"}>
                     <MonacoEditor
-                        width="100%"
-                        height="500px"
+                        width="100vw"
+                        height="50vh"
                         language="customLanguage"
                         theme={theme}
                         value={inputMessage}
