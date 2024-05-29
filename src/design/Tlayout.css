@@ -26,7 +26,25 @@
     text-align: center;
     border-radius: 0.5em;
 }
+.database-menu{
+    position: absolute;
+    z-index: 10;
+    left:41.5%;
+    padding: 0.2em , 0.5em;
+    transform: translateX(-50%);
+    transition: 0.5s;
+    width: 100px;
+    text-align: center;
+    border-radius: 0.5em;
+}
 .dropdown-item{
+    float: none;
+    padding: 0.7em , 0.5em;
+    margin: 0.3em , 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.database-item{
     float: none;
     padding: 0.7em , 0.5em;
     margin: 0.3em , 0;
@@ -36,7 +54,9 @@
 .dropdown-item:hover{
     background: #2a2d35;
 }
-
+.database-item:hover{
+    background: #2a2d35;
+}
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media screen and (max-width: 1200px) {
     .column {

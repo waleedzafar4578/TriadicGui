@@ -4,19 +4,58 @@ import * as monaco from 'monaco-editor';
 import customLanguage from "./CustomLan.js";
 import "../design/Tlayout.css"
 import OutputWindow from "./Output.jsx";
+import data from '../assets/databases.json'
 // import Dropdown from './Dropdown.jsx';
 
 
 const Tlayout = () => {
     // const themeOptions = ['hc-black' , 'vs-light' , 'vs-dark']
-
+    const [selectedDatabase , setSelectedDatabase] = useState('Databases')
     const [isDropdownOpen , setIsDropdownOpen] = useState(false);
+    const [isDatabaseDropdownOpen , setIsDatabaseDropdownOpen] = useState(false);
     const [inputMessage, setInputMessage] = useState('');
     const [InputStatus,setInputStatus]=useState('');
     const [outputMessage, setOutputMessage] = useState('');
     const editorRef = useRef(null);
     const [fontSize, setFontSize] = useState(14);
     const [theme, setTheme] = useState('hc-black');
+    const dropdownRef = useRef(null);
+    const themeRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsDatabaseDropdownOpen(false);
+          }
+          if(themeRef.current && !themeRef.current.contains(event.target)){
+            setIsDropdownOpen(false);
+          }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, []);
+
+    useEffect(()=>{
+        const menuItems = document.querySelectorAll("li");
+        console.log(menuItems);
+        document.addEventListener('click ', function(event){
+            let clickOnMenuItems = false;
+            for(let i = 0; i < menuItems.length; i++){
+                if(event.target === menuItems[i]){
+                    clickOnMenuItems = true;
+                    break;
+                }
+            }
+            if(clickOnMenuItems === false){
+                setIsDropdownOpen(false);
+                setIsDatabaseDropdownOpen(false);
+            }
+        })
+    } , [])
+
     useEffect(() => {
         monaco.languages.register({ id: 'customLanguage' });
         monaco.languages.setMonarchTokensProvider('customLanguage', customLanguage);
@@ -38,6 +77,14 @@ const Tlayout = () => {
         }
     }, []);
     //Handling Dropdown Opening and Closing
+    function handleSelectDatabase(indentifier)
+    {
+        setSelectedDatabase(indentifier);
+    }
+    function handleDatabaseDropdown()
+    {
+        setIsDatabaseDropdownOpen(!isDatabaseDropdownOpen)
+    }
     function handlingDropdownToggle()
     {
         setIsDropdownOpen(!isDropdownOpen);
@@ -137,7 +184,7 @@ const Tlayout = () => {
         };
         reader.readAsText(file);
     };
-
+    const databases = Object.keys(data);
     return (
         <>
             <div id={"btt"}>
@@ -149,7 +196,7 @@ const Tlayout = () => {
                 <button onClick={() => changeTheme('vs-light')}>VS-light</button> */}
                 <button className='drop-down-button' onClick={handlingDropdownToggle}>Themes</button>
                 {isDropdownOpen && (
-                    <ul className='drop-down-menu'>
+                    <ul className='drop-down-menu' ref={themeRef}>
                         <li className = 'dropdown-item' onClick={() => changeTheme('hc-black')}>HC-Black</li>
                         <li className = 'dropdown-item' onClick={() => changeTheme('vs-dark')}>VS-Dark</li>
                         <li className = 'dropdown-item' onClick={() => changeTheme('vs-light')}>VS-Light</li>
@@ -157,7 +204,18 @@ const Tlayout = () => {
                 )}
                 {/* <Dropdown options={themeOptions} handleSelect={changeTheme} buttonName={'Theme'}/> */}
                 <button onClick={handleSave}>Save</button>
-                <button>Databases</button>
+                
+
+                <button className='databases-drop-down-button' onClick={handleDatabaseDropdown}>{selectedDatabase}</button>
+                {isDatabaseDropdownOpen && (
+                    <ul className="database-menu" ref={dropdownRef}>
+                        {databases.map(database => (
+                            <li className='database-item' onClick={() => handleSelectDatabase(database)} key = {database}>{database}</li>
+                        ))}
+                    </ul>
+                )}
+                
+
                 <input className='handleLoad' type="file" onChange={handleLoad}/>
             </div>
             <div className={"row"}>
