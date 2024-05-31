@@ -1,5 +1,6 @@
 {
     "Student": {"Columns": ["Name" , "Age" , "Roll Number" , "CGPA" , "Semester"]},
     "Teacher": {"Columns": ["Name" , "Age" , "Teacher ID" , "Designation" , "Subject"]},
-    "Class": {"Columns": ["Room Number" , "Student Stength" , "Teacher" , "Subject" , "isSustitute"]}
+    "Class": {"Columns": ["Room Number" , "Student Stength" , "Teacher" , "Subject" , "isSustitute"]},
+    "Subject": {"COlumns": ["Subject ID" , "Subject Name", "Teacher Name" , "Number of Enrolled Students" , "Credit Hours" ]}
 }

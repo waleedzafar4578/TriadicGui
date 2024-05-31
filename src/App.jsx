@@ -56,8 +56,8 @@ function App() {
     //           <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
     //       )}
     //   </>
-    // <Overview />
-    <EditorPage/>
+    <Overview />
+    // <EditorPage/>
   )
 }
 
