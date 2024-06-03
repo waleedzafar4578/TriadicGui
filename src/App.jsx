@@ -1,5 +1,5 @@
 import './App.css'
-// import Theader from "./component/Theader.jsx";
+ import Theader from "./component/Theader.jsx";
 // import Tfooter from "./component/Tfooter.jsx";
 import AppRouter from "./component/Tnavi.jsx";
 import Connection from "./component/Connection.jsx";
@@ -10,7 +10,7 @@ import EditorPage from './component/EditorPage.jsx';
 
 
 
-
+//sadasd
 function App() {
     const [isCreatingAccount , setIsCreatingAccount] = useState(false);
     function handleCreatingAccount()
@@ -38,6 +38,13 @@ function App() {
         console.log("Login Function token:")
         console.log(token);
         localStorage.setItem('token', token);
+
+        setTimeout(() => {
+            localStorage.removeItem('token');
+            console.log('Token removed from local storage after 2 minutes.');
+            window.location.reload();
+        }, 3 * 60 * 1000);
+
         setIsLoggedIn(true);
     };
 
@@ -47,17 +54,21 @@ function App() {
         localStorage.removeItem('token');
         setIsLoggedIn(false);
     };
-
+//asd
   return (
-    //   <>
-    //       {isLoggedIn ? (
-    //           <AppRouter onLogout={handleLogout} />
-    //       ) : (
-    //           <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
-    //       )}
-    //   </>
-    <Overview />
-    // <EditorPage/>
+       <>
+           {isLoggedIn ? (
+               <>
+                   <Theader />
+                   <AppRouter onLogout={handleLogout} />
+               </>
+
+           ) : (
+               <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
+           )}
+       </>
+    // <Overview />
+    //<EditorPage/>
   )
 }
 

@@ -27,7 +27,7 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                 },
                 body: JSON.stringify({ username, password }),
             });
-
+            console.log(response);
             if (!response.ok) {
                 throw new Error('Account creation failed');
             }

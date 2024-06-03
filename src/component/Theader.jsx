@@ -1,6 +1,6 @@
 import "../design/Theader.css"
 import {useEffect, useState} from "react";
-function Theader(props){
+function Theader(){
     const [isConnected, setIsConnected] = useState(true); // Default to true
 
     useEffect(() => {
@@ -29,7 +29,7 @@ function Theader(props){
 
     return (
     <div className={`connection-status ${isConnected ? 'connected' : 'disconnected'}`}>
-        {isConnected ? <header>{props.text}</header> : <header>{props.text}</header>}
+        {isConnected ? <header>Triadic Sql</header> : <header>Triadic Sql</header>}
     </div>
 )
 }
