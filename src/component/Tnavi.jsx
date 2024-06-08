@@ -30,6 +30,7 @@ const AppRouter = () => {
                 <Route path="/help" element={<HelpPage />} />
             </Routes>
         </Router>
+
     );
 };
 

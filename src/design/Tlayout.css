@@ -1,24 +1,35 @@
 /* Create three equal columns that float next to each other */
 .column {
-    float: left;
+    /* float: left; */
     margin: 3px;
-    width: 49%;
+    width: 100vw;
     background: #2E4F4F;
-    height: 500px;
+    height: 50vh;
     border: #2C3333;
     border-radius: 3px;
 }
 
 /* Clear floats after the columns */
 .row:after {
-    content: "";
+    /* content: "";
     display: table;
-    clear: both;
+    clear: both; */
 }
 .drop-down-menu{
     position: absolute;
     z-index: 10;
     left:27%;
+    padding: 0.2em , 0.5em;
+    transform: translateX(-50%);
+    transition: 0.5s;
+    width: 100px;
+    text-align: center;
+    border-radius: 0.5em;
+}
+.database-menu{
+    position: absolute;
+    z-index: 10;
+    left:41.5%;
     padding: 0.2em , 0.5em;
     transform: translateX(-50%);
     transition: 0.5s;
@@ -33,10 +44,19 @@
     border-radius: 0.5em;
     cursor: pointer;
 }
+.database-item{
+    float: none;
+    padding: 0.7em , 0.5em;
+    margin: 0.3em , 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
 .dropdown-item:hover{
     background: #2a2d35;
 }
-
+.database-item:hover{
+    background: #2a2d35;
+}
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media screen and (max-width: 1200px) {
     .column {
@@ -54,6 +74,8 @@
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
+    float:right;
+    margin-top: -2px;
 }
 .custom-file-upload {
     border: 1px solid #353535;

@@ -20,14 +20,14 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                 throw new Error('Passwords do not match');
             }
 
-            const response = await fetch('your-api-endpoint/create-account', {
+            const response = await fetch('http://localhost:8080/ca', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ username, password,confirmPassword }),
             });
-
+            console.log(response);
             if (!response.ok) {
                 throw new Error('Account creation failed');
             }
