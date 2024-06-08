@@ -9,14 +9,14 @@ import '../design/Connection.css'
 function CreateAccount({ onCreateAccount , loginPageRender }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [confirm, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            if (password !== confirmPassword) {
+            if (password !== confirm) {
                 throw new Error('Passwords do not match');
             }
 
@@ -25,8 +25,9 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password,confirmPassword }),
+                body: JSON.stringify({ username, password,confirm }),
             });
+
             console.log(response);
             if (!response.ok) {
                 throw new Error('Account creation failed');
@@ -35,10 +36,10 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
             const data = await response.json();
 
             // Assuming the server sends back a token upon successful account creation
-            const token = data.token;
+            alert(data.related_info);
 
             // Call the onCreateAccount callback with the token
-            onCreateAccount(token);
+            onCreateAccount("");
         } catch (err) {
             setError(err.message);
         }
@@ -73,7 +74,7 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                         <input
                             className='confirmPassword'
                             type="password"
-                            value={confirmPassword}
+                            value={confirm}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             placeholder='Confirm Password'
                         />
@@ -101,8 +102,8 @@ function Login( {onLogin , createPageRender} ) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(username);
-        console.log(password);
+        //console.log(username);
+        //console.log(password);
         try {
             const response = await fetch('http://localhost:8080/ln', {
                 method: 'POST',
