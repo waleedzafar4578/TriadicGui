@@ -45,6 +45,7 @@ function App() {
                 });
                 console.log(response);
                 if (!response.ok) {
+                    localStorage.removeItem('token');
                     throw new Error('Something wrong when check token');
                 }
                 const data = await response.json();
