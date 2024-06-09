@@ -36,7 +36,7 @@ function App() {
         const checktoken = async () => {
 
                 const token=localStorage.getItem('token');
-                const response = await fetch('http://localhost:8080/checkt', {
+                const response = await fetch('https://triadicsqldb.onrender.com/checkt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ function VerifyToken() {
 
     if (stoken) {
         // Send token to server for verification
-        fetch('http://localhost:8080/checkt', {
+        fetch('https://triadicsqldb.onrender.com/checkt', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

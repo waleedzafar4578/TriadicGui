@@ -4,7 +4,7 @@ function HelpPage() {
     const [helpData, setHelpData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/help')
+        fetch('https://triadicsqldb.onrender.com/help')
             .then(response => response.json())
             .then(data => {
                 setHelpData(data);

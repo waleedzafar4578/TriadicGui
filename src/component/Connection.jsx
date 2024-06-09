@@ -20,7 +20,7 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                 throw new Error('Passwords do not match');
             }
 
-            const response = await fetch('http://localhost:8080/ca', {
+            const response = await fetch('https://triadicsqldb.onrender.com/ca', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

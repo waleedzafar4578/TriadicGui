@@ -5,7 +5,7 @@ function ResultPage() {
     const [helpData, setHelpData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/result')
+        fetch('https://triadicsqldb.onrender.com/result')
             .then(response => response.json())
             .then(data => {
                 setHelpData(data);

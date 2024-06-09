@@ -71,7 +71,7 @@ const Tlayout = () => {
         const stoken = localStorage.getItem('token');
         console.log(stoken);
         try {
-            const response = await fetch('http://localhost:8080/pq', {
+            const response = await fetch('https://triadicsqldb.onrender.com/pq', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
