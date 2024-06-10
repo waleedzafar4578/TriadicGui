@@ -32,6 +32,8 @@ function App() {
             setIsLoggedIn(false);
         }
     }, []);
+
+
     useEffect(() => {
         const checktoken = async () => {
 
@@ -85,15 +87,14 @@ function App() {
         localStorage.removeItem('token');
         setIsLoggedIn(false);
     };
-//asd
+
   return (
-       <>
+      <>
            {isLoggedIn ? (
                <>
                    <Theader />
                    <AppRouter onLogout={handleLogout} />
                </>
-
            ) : (
                <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
            )}

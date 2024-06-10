@@ -105,7 +105,7 @@ function Login( {onLogin , createPageRender} ) {
         //console.log(username);
         //console.log(password);
         try {
-            const response = await fetch('http://localhost:8080/ln', {
+            const response = await fetch('https://triadicsqldb.onrender.com/ln', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
