@@ -1,6 +1,10 @@
 import {useEffect, useRef, useState} from 'react';
 import MonacoEditor from 'react-monaco-editor';
 import * as monaco from 'monaco-editor';
+import  {Button}  from '@mui/material';
+import {Dialog} from '@mui/material';
+import {DialogActions} from '@mui/material';
+import {DialogContent} from '@mui/material';
 import customLanguage from "./CustomLan.js";
 import "../design/Tlayout.css"
 import OutputWindow from "./Output.jsx";
@@ -9,7 +13,7 @@ import OutputWindow from "./Output.jsx";
 
 const Tlayout = () => {
     // const themeOptions = ['hc-black' , 'vs-light' , 'vs-dark']
-
+    const [dialogOpen , setDialogOpen] = useState(false);
     const [isDropdownOpen , setIsDropdownOpen] = useState(false);
     const [inputMessage, setInputMessage] = useState('');
     const [InputStatus,setInputStatus]=useState('');
@@ -48,7 +52,14 @@ const Tlayout = () => {
         setInputMessage(newValue);
 
     };
-
+    function handleDialogOpen()
+    {
+        setDialogOpen(true);
+    }
+    function handleDialogClose()
+    {
+        setDialogOpen(false);
+    }
     // Function to get the selected text from the editor
     const getSelectedText = () => {
         const editor = editorRef.current;
@@ -141,7 +152,10 @@ const Tlayout = () => {
     return (
         <>
             <div id={"btt"}>
-                <button onClick={() => handleButtonClick(true)}>Run</button>
+                <button onClick={() => {
+                    handleButtonClick(true);
+                    handleDialogOpen();
+                    }}>Run</button>
                 <button onClick={increaseFontSize}>Inc Font</button>
                 <button onClick={decreaseFontSize}>Dec Font</button>
                 {/* <button onClick={() => changeTheme('hc-black')}>HC-Black</button>
@@ -176,9 +190,15 @@ const Tlayout = () => {
                         className="rounded-editor"
                     />
                 </div>
-                <div className={"column"}>
-                   <OutputWindow status={InputStatus} output={outputMessage}/>
-                </div>
+                <Dialog open={dialogOpen} onClose={handleDialogClose} maxWidth = "lg" fullWidth>
+                    <DialogContent>
+                        <OutputWindow status={InputStatus} output={outputMessage}/> 
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleDialogClose}>Close</Button>
+                    </DialogActions>
+                </Dialog>
+                                 
             </div>
         </>
     );
