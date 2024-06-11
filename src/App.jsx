@@ -6,7 +6,7 @@ import Connection from "./component/Connection.jsx";
 import {useEffect, useState} from "react";
 // import VerifyToken from "./component/TokenChecker.jsx";
 import Overview from './component/Overview.jsx';
-import EditorPage from './component/EditorPage.jsx';
+
 
 
 
@@ -89,17 +89,17 @@ function App() {
     };
 
   return (
-    //   <>
-    //        {isLoggedIn ? (
-    //            <>
-    //                <Theader />
-    //                <AppRouter onLogout={handleLogout} />
-    //            </>
-    //        ) : (
-    //            <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
-    //        )}
-    //    </>
-    <EditorPage/>
+       <>
+            {isLoggedIn ? (
+                <>
+                    <Theader />
+                    <AppRouter onLogout={handleLogout} />
+                </>
+            ) : (
+                <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
+            )}
+        </>
+
   )
 }
 

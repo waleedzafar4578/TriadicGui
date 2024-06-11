@@ -102,6 +102,7 @@ const customLanguage = {
             [/\bT\b/, 'keyword'],
             [/\bL\b/, 'keyword'],
             [/\bF\b/, 'keyword'],
+            [/\bCHAR\b/, 'keyword'],
             [/\bFLOAT\b/, 'keyword'],
             [/\bSTRING\b/, 'keyword'],
             [/\bTEXT\b/, 'keyword'],
