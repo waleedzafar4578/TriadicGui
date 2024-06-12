@@ -8,6 +8,7 @@ import {DialogContent} from '@mui/material';
 import customLanguage from "./CustomLan.js";
 import "../design/Tlayout.css"
 import OutputWindow from "./Output.jsx";
+import button from "bootstrap/js/src/button.js";
 // import Dropdown from './Dropdown.jsx';
 
 
@@ -21,6 +22,8 @@ const Tlayout = () => {
     const editorRef = useRef(null);
     const [fontSize, setFontSize] = useState(14);
     const [theme, setTheme] = useState('hc-black');
+
+
     useEffect(() => {
         monaco.languages.register({ id: 'customLanguage' });
         monaco.languages.setMonarchTokensProvider('customLanguage', customLanguage);
@@ -148,7 +151,7 @@ const Tlayout = () => {
         };
         reader.readAsText(file);
     };
-
+    const [database, setDatabase] = useState("None");
     return (
         <>
             <div id={"btt"}>
@@ -170,15 +173,17 @@ const Tlayout = () => {
                     </ul>
                 )}
                 {/* <Dropdown options={themeOptions} handleSelect={changeTheme} buttonName={'Theme'}/> */}
+
                 <button onClick={handleSave}>Save</button>
-                <input className='handleLoad'type="file" onChange={handleLoad}/>
+                <text className= 'db_select'>Selected Database: {database} </text>
+                <input className='handleLoad' type="file" onChange={handleLoad}/>
             </div>
             <div className={"row"}>
 
                 <div className={"column"}>
                     <MonacoEditor
                         width="100%"
-                        height="500px"
+                        height="80vh"
                         language="customLanguage"
                         theme={theme}
                         value={inputMessage}
@@ -190,11 +195,17 @@ const Tlayout = () => {
                         className="rounded-editor"
                     />
                 </div>
-                <Dialog open={dialogOpen} onClose={handleDialogClose} maxWidth = "lg" fullWidth>
-                    <DialogContent style={{backgroundColor: theme == 'hc-black' || theme == 'vs-dark'?'#403E3E':'white'}}>
-                        <OutputWindow status={InputStatus} output={outputMessage}/> 
+                <Dialog open={dialogOpen} onClose={handleDialogClose} maxWidth="lg" fullWidth>
+                    <DialogContent style={{
+                        backgroundColor: theme === 'hc-black' || theme === 'vs-dark' ? '#403E3E' : 'white',
+                        color: theme === 'hc-black' || theme === 'vs-dark' ? 'white' : 'black'
+                    }}>
+                        <OutputWindow status={InputStatus} output={outputMessage} />
                     </DialogContent>
-                    <DialogActions style={{backgroundColor: theme == 'hc-black' || theme == 'vs-dark'? '#403E3E':'white'}}>
+                    <DialogActions style={{
+                        backgroundColor: theme === 'hc-black' || theme === 'vs-dark' ? '#403E3E' : 'white',
+                        color: theme === 'hc-black' || theme === 'vs-dark' ? 'white' : 'black'
+                    }}>
                         <Button onClick={handleDialogClose}>Close</Button>
                     </DialogActions>
                 </Dialog>
