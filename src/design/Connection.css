@@ -70,7 +70,7 @@ img {
     width: 500px;
     border-radius: 10%;
     background-size: 500%;
-    animation: left-animation 15s infinite alternate;
+    animation: left-animation 10s infinite alternate ease-in-out;
 }
 @keyframes left-animation {
     0%{

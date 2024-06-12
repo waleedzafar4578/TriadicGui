@@ -5,6 +5,23 @@
     justify-content: center;
     align-items: center;
 }
-#Top3{
-    transform: ro;
+#Top{
+    transform-origin: center;
+    animation: rotateAnimation 10s infinite alternate ease-in-out;
+}
+#Right{
+    transform-origin: center;
+    animation: rotateAnimation 10s infinite alternate ease-in-out;
+}
+#Left{
+    transform-origin: center;
+    animation: rotateAnimation 10s infinite alternate ease-in-out;
+}
+@keyframes rotateAnimation {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
 }

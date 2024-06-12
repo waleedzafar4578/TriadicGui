@@ -4,6 +4,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import '../design/Connection.css'
+import TriadicLogo from './Logo';
 
 // eslint-disable-next-line react/prop-types
 function CreateAccount({ onCreateAccount , loginPageRender }) {
@@ -85,8 +86,7 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                 </form>
             </div>
             <div className="right">
-                {/* Logo */}
-                <h2>Triadic SQL DB</h2>
+                <TriadicLogo />
             </div>
         </div>
     );
@@ -138,8 +138,7 @@ function Login( {onLogin , createPageRender} ) {
     return (
         <div className="login">
             <div className="left">
-                {/* Logo */}
-                <h2>Triadic SQL DB</h2>
+                <TriadicLogo />
             </div>
             <div className='login-container'>
                 <h2 className='heading'>Login</h2>
