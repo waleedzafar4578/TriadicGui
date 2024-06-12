@@ -1,0 +1,42 @@
+.compare{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.compare h2{
+    margin-left: 10px;
+}
+#SmallCircle{
+    animation: smallCircleAnimation 2s infinite alternate;
+}
+#BigCircle{
+    animation: largeCircleAnimation 2s infinite alternate;
+}
+#Lever{
+    transform-origin: center;
+    animation: leverAnimation 2s infinite alternate;
+}
+@keyframes smallCircleAnimation {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(100px);
+    }
+}
+@keyframes largeCircleAnimation {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-100px);
+    }
+}
+@keyframes leverAnimation {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(-20deg);
+    }
+}

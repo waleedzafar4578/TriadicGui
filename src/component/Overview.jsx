@@ -1,8 +1,39 @@
 import '../design/Overview.css'
-import overViewContent from '../assets/overviewContent';
 import TriadicLogo from './Logo';
+import { useState , useEffect } from 'react';
+import { interpolateColor , hexToRgb , rgbToHex } from '../utils.js';
+import CompareIcon from '../assets/svgs/CompareIcon.jsx';
 // import { useState , useEffect , useRef} from 'react'
 function Overview(){
+    const [scrollY, setScrollY] = useState(0);
+    const handleScroll = () => {
+        setScrollY(window.scrollY);
+    };
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    const calculateGradient = () => {
+        const startColor = hexToRgb("#0F4C81");
+        const midColorOne = hexToRgb('#00C6BB');
+        const midColorTwo = hexToRgb('#1C857E');
+        const endColor = hexToRgb("#334B49");
+        
+        // Determine the scroll factor between 0 and 1
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const factor = Math.min(scrollY / maxScroll, 1);
+    
+        // Interpolate the colors
+        const color1 = rgbToHex(interpolateColor(startColor, midColorOne, factor));
+        const color2 = rgbToHex(interpolateColor(midColorOne, midColorTwo, factor));
+        const color3 = rgbToHex(interpolateColor(midColorTwo, endColor, factor));
+        const color4 = rgbToHex(interpolateColor(endColor , startColor , factor));
+    
+        return `linear-gradient(to bottom right, ${color1}, ${color2}, ${color3}, ${color4})`;
+      };
     // const [activeClass , setActiveClass] = useState('');
     // const [sidebarOffset , setSideBarOffset] = useState(0);
     // const sidebarRef = useRef();
@@ -126,6 +157,21 @@ function Overview(){
     // {
     //     setActiveClass(identifier);
     // }
+    // useEffect(() => {
+    //     window.addEventListener('scroll' , ()=>{
+    //         const scrollTop = window.scrollY;
+    //         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    //         const scrollPercentage = scrollTop / docHeight;
+    //         const startColor = [15 , 76 , 129];
+    //         const endColor = [116 , 250 , 200];
+    //         const currentColor = startColor.map((start , index) => {
+    //             const end = endColor[index];
+    //             return Math.round(start + (end - start) * scrollPercentage);
+    //         });
+    //         const gradientColor = `rgb(${currentColor.join(',')})`;
+    //         document.getElementById('introduction').style.background(`linear-gradient(to bottom right , ${gradientColor}) 0%, ${gradientColor} 100%`);
+    //     });
+    // } , [])
     return(
         <div className="overviewContainer">
             {/* <div className="toc-container" ref={sidebarRef}>
@@ -140,15 +186,19 @@ function Overview(){
             </div> */}
             <TriadicLogo mode="linear"/>
             <div className="content">
-                <div className="resizer"></div>
                 <div className="sections">
-                <section id="introduction">
-                    <h2>Introduction</h2>
-                    <p>{overViewContent.introduction.content}</p>
-                </section>
+                <div id="introduction" style={{background: calculateGradient()}}>
+                    <div className="glass">
+                        <h2>Triadic SQL DB</h2>
+                        <p>Welcome to Triadic SQL DB! Triadic SQL DB is web-based SQL engine that addresses the challenge of <strong>imperfect information</strong> in databases and offers an <strong>alternative</strong> to traditional <strong>binary</strong> and <strong>fuzzy logic-based systems</strong>.</p>
+                    </div>
+                    <div className="key-features">
+                        <CompareIcon />
+                    </div>
+                </div>
                 <section id="key-features">
                     <h2>Key Features</h2>
-                    <p>Introduction of the product</p>
+                    
                 </section>
                 <section id="benefits">
                     <h2>Benefits</h2>

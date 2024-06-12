@@ -94,7 +94,7 @@ function TriadicLogo({mode})
 </g>
 </g>
 </svg>
-<h1>Triadic Logic</h1>
+{mode == 'linear' ? (<h1 className='productName'>Triadic SQL DB</h1>) : null }
     </div>
     )
 }
