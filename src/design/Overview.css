@@ -28,10 +28,10 @@
 } */
 
 .overviewContainer{
-    display: grid;
-    grid-template-columns: 27.5% 72.5%;
+    /* display: grid;
+    grid-template-columns: 27.5% 72.5%; */
 }
-.tableOfContent{
+/* .tableOfContent{
     display: flex;
     flex-direction: column;
     width: 23.5vw;
@@ -60,7 +60,7 @@
 }
 .active-class:hover{
     color:#a09999;
-}
+} */
 .content{
     padding-top: 20px;
     display: flex;

@@ -191,10 +191,10 @@ const Tlayout = () => {
                     />
                 </div>
                 <Dialog open={dialogOpen} onClose={handleDialogClose} maxWidth = "lg" fullWidth>
-                    <DialogContent>
+                    <DialogContent style={{backgroundColor: theme == 'hc-black' || theme == 'vs-dark'?'#403E3E':'white'}}>
                         <OutputWindow status={InputStatus} output={outputMessage}/> 
                     </DialogContent>
-                    <DialogActions>
+                    <DialogActions style={{backgroundColor: theme == 'hc-black' || theme == 'vs-dark'? '#403E3E':'white'}}>
                         <Button onClick={handleDialogClose}>Close</Button>
                     </DialogActions>
                 </Dialog>

@@ -1,10 +1,11 @@
 import '../design/Overview.css'
 import overViewContent from '../assets/overviewContent';
-import { useState , useEffect , useRef} from 'react'
+import TriadicLogo from './Logo';
+// import { useState , useEffect , useRef} from 'react'
 function Overview(){
-    const [activeClass , setActiveClass] = useState('');
+    // const [activeClass , setActiveClass] = useState('');
     // const [sidebarOffset , setSideBarOffset] = useState(0);
-    const sidebarRef = useRef();
+    // const sidebarRef = useRef();
     // useEffect(()=>{
     //     const element = sidebarRef.current;
     //     const resizeObserver = new ResizeObserver((entries) =>{
@@ -19,43 +20,43 @@ function Overview(){
     //     if(sidebarOffset.current)
             
     // }, [])
-    useEffect(()=>{
+    // useEffect(()=>{
         
-        const sidebar = document.querySelector('.tableOfContent');
-        const resizer = document.querySelector('.resizer');
-        const content = document.querySelector('.content');
-        function resizerFunction(resizer , sidebar , content){
-            var xCordinates , sidebarWidth , contentWidth;
-            function mouseDownHandler(event){
-                xCordinates = event.clientX;
-                var sbWidth = window.getComputedStyle(sidebar).width;
-                var cWidth = window.getComputedStyle(content).width;
-                contentWidth = parseFloat(cWidth);
-                sidebarWidth = parseFloat(sbWidth);
-                document.addEventListener("mousemove" , handleMouseMove);
-                document.addEventListener("mouseup" , handleMouseUp);
-            }
-            function handleMouseMove(event)
-            {
-                let difference = event.clientX - xCordinates;
-                let currentSidebarWidth = sidebarWidth + difference;
-                let currentContentWidth = contentWidth - difference;
-                console.log("Current Side Bar Width: " , currentSidebarWidth);
-                console.log("Current Content Width: " , currentContentWidth);
-                if(200 < currentSidebarWidth && currentSidebarWidth < 500){
-                    sidebar.style.width = `${currentSidebarWidth}px`;
-                    content.style.marginLeft = `${difference}px`;
-                }
-            }
-            function handleMouseUp()
-            {
-                document.removeEventListener("mousemove" , handleMouseMove);
-                document.removeEventListener("mouseup" , handleMouseUp);
-            }
-            resizer.addEventListener("mousedown" , mouseDownHandler)
-         }
-         resizerFunction(resizer , sidebar , content);
-    },[])
+    //     const sidebar = document.querySelector('.tableOfContent');
+    //     const resizer = document.querySelector('.resizer');
+    //     const content = document.querySelector('.content');
+    //     function resizerFunction(resizer , sidebar , content){
+    //         var xCordinates , sidebarWidth , contentWidth;
+    //         function mouseDownHandler(event){
+    //             xCordinates = event.clientX;
+    //             var sbWidth = window.getComputedStyle(sidebar).width;
+    //             var cWidth = window.getComputedStyle(content).width;
+    //             contentWidth = parseFloat(cWidth);
+    //             sidebarWidth = parseFloat(sbWidth);
+    //             document.addEventListener("mousemove" , handleMouseMove);
+    //             document.addEventListener("mouseup" , handleMouseUp);
+    //         }
+    //         function handleMouseMove(event)
+    //         {
+    //             let difference = event.clientX - xCordinates;
+    //             let currentSidebarWidth = sidebarWidth + difference;
+    //             let currentContentWidth = contentWidth - difference;
+    //             console.log("Current Side Bar Width: " , currentSidebarWidth);
+    //             console.log("Current Content Width: " , currentContentWidth);
+    //             if(200 < currentSidebarWidth && currentSidebarWidth < 500){
+    //                 sidebar.style.width = `${currentSidebarWidth}px`;
+    //                 content.style.marginLeft = `${difference}px`;
+    //             }
+    //         }
+    //         function handleMouseUp()
+    //         {
+    //             document.removeEventListener("mousemove" , handleMouseMove);
+    //             document.removeEventListener("mouseup" , handleMouseUp);
+    //         }
+    //         resizer.addEventListener("mousedown" , mouseDownHandler)
+    //      }
+    //      resizerFunction(resizer , sidebar , content);
+    // },[])
     // useEffect(()=>{
     //     function convertVwIntoPixels(valueInVw)
     //     {
@@ -106,28 +107,28 @@ function Overview(){
     //     }
     //     resizerFunction(resizer , sidebar);
     // })
-    useEffect(()=>{
-        const sidebarLinks = document.querySelectorAll('a');
-        document.addEventListener('click' , function(event){
-           let clickedOnOptions = false;
-           for (let i = 0; i < sidebarLinks.length; i++){
-                if(event.target === sidebarLinks[i]){
-                    clickedOnOptions = true;
-                    break;
-                }
-           }
-           if(clickedOnOptions === false){
-            setActiveClass('')
-           }
-        })
-    } , [])
-    function handleActiveClass(identifier)
-    {
-        setActiveClass(identifier);
-    }
+    // useEffect(()=>{
+    //     const sidebarLinks = document.querySelectorAll('a');
+    //     document.addEventListener('click' , function(event){
+    //        let clickedOnOptions = false;
+    //        for (let i = 0; i < sidebarLinks.length; i++){
+    //             if(event.target === sidebarLinks[i]){
+    //                 clickedOnOptions = true;
+    //                 break;
+    //             }
+    //        }
+    //        if(clickedOnOptions === false){
+    //         setActiveClass('')
+    //        }
+    //     })
+    // } , [])
+    // function handleActiveClass(identifier)
+    // {
+    //     setActiveClass(identifier);
+    // }
     return(
         <div className="overviewContainer">
-            <div className="toc-container" ref={sidebarRef}>
+            {/* <div className="toc-container" ref={sidebarRef}>
                 <ul className="tableOfContent">
                     <li><a className={activeClass === 'Introduction' ? 'active-class' : ''} onClick={() => handleActiveClass('Introduction')} href="#introduction">Introduction</a></li>
                     <li><a className={activeClass === 'Key Features' ? 'active-class' : ''} onClick={() => handleActiveClass('Key Features')} href="#key-features">Key Features</a></li>
@@ -136,7 +137,8 @@ function Overview(){
                     <li><a className={activeClass === 'Demo' ? 'active-class' : ''} onClick={() => handleActiveClass('Demo')} href="#demo">Demo</a></li>
                     <li><a className={activeClass === 'Special Thanks' ? 'active-class' : ''} onClick={() => handleActiveClass('Special Thanks')} href="#special-thanks">Special Thanks</a></li>
                 </ul>
-            </div>
+            </div> */}
+            <TriadicLogo />
             <div className="content">
                 <div className="resizer"></div>
                 <div className="sections">
