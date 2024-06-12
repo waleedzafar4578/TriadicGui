@@ -5,12 +5,11 @@ import AppRouter from "./component/Tnavi.jsx";
 import Connection from "./component/Connection.jsx";
 import {useEffect, useState} from "react";
 // import VerifyToken from "./component/TokenChecker.jsx";
-import Overview from './component/Overview.jsx';
-import EditorPage from './component/EditorPage.jsx';
 
 
 
-//sadasd
+
+
 function App() {
     const [isCreatingAccount , setIsCreatingAccount] = useState(false);
     function handleCreatingAccount()
@@ -89,17 +88,17 @@ function App() {
     };
 
   return (
-    //    <>
-    //         {isLoggedIn ? (
-    //             <>
-    //                 <Theader />
-    //                 <AppRouter onLogout={handleLogout} />
-    //             </>
-    //         ) : (
-    //             <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
-    //         )}
-    //     </>
-    <Overview/>
+        <>
+             {isLoggedIn ? (
+                 <>
+                     <Theader />
+                     <AppRouter onLogout={handleLogout} />
+                 </>
+             ) : (
+                 <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
+             )}
+         </>
+    //<Overview/>
     // <EditorPage/>
   )
 }

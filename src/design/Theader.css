@@ -15,7 +15,7 @@
 }
 
 .connected {
-    background-color: #2E4F4F; /* Green color for connected status */
+    background-color: rgba(0, 146, 203, 0.92); /* Green color for connected status */
 }
 
 .disconnected {
