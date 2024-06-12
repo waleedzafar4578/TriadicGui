@@ -86,7 +86,7 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                 </form>
             </div>
             <div className="right">
-                <TriadicLogo />
+                <TriadicLogo mode="alternative"/>
             </div>
         </div>
     );
@@ -138,7 +138,7 @@ function Login( {onLogin , createPageRender} ) {
     return (
         <div className="login">
             <div className="left">
-                <TriadicLogo />
+                <TriadicLogo mode="alternative"/>
             </div>
             <div className='login-container'>
                 <h2 className='heading'>Login</h2>

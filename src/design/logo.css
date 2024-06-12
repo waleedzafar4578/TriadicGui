@@ -1,11 +1,11 @@
 .container{
-    height: 500px;
-    width: 500px;
+    height: 70vh;
+    width: 90vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#Top{
+/* #Top{
     transform-origin: center;
     animation: rotateAnimation 10s infinite alternate ease-in-out;
 }
@@ -16,6 +16,14 @@
 #Left{
     transform-origin: center;
     animation: rotateAnimation 10s infinite alternate ease-in-out;
+} */
+.alternative{
+    transform-origin: center;
+    animation: rotateAnimation 10s infinite alternate ease-in-out;
+}
+.linear{
+    transform-origin: center;
+    animation: rotateAnimation 10s infinite linear;
 }
 @keyframes rotateAnimation {
     0%{

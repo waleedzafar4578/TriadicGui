@@ -138,7 +138,7 @@ function Overview(){
                     <li><a className={activeClass === 'Special Thanks' ? 'active-class' : ''} onClick={() => handleActiveClass('Special Thanks')} href="#special-thanks">Special Thanks</a></li>
                 </ul>
             </div> */}
-            <TriadicLogo />
+            <TriadicLogo mode="linear"/>
             <div className="content">
                 <div className="resizer"></div>
                 <div className="sections">
