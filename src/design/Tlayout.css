@@ -97,3 +97,19 @@
 #btt{
     flex-direction: row;
 }
+.logout-button{
+    background-color: #2C3333;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 0;
+    border: 0 solid transparent;
+}
+.logout-button a:hover:not(.active) {
+    background-color: #2E4F4F;
+}
+.logout-button:hover{
+    background-color: #2E4F4F;
+}

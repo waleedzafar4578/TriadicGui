@@ -7,6 +7,12 @@ import HelpPage from './HelpPAge.jsx';
 import Overview from './Overview.jsx';
 import '../design/Tnavi.css';
 
+const handleLogout = () => {
+    // Remove token from localStorage
+    console.log("Logout function");
+    localStorage.removeItem('token');
+    window.location.reload();
+};
 const AppRouter = () => {
     return (
         <Router basename="/TriadicGui"> {/* Replace 'your-repo-name' with the actual name of your GitHub repository */}
@@ -16,6 +22,9 @@ const AppRouter = () => {
                     <li className='menu-item'><Link to="/editor">Play Ground</Link></li>
                     <li className='menu-item'><Link to="/result">Example</Link></li>
                     <li className='menu-item'><Link to="/help">Help</Link></li>
+                    <li className='menu-item'>
+                        <button onClick={handleLogout} className='logout-button'>LogOut</button>
+                    </li>
                 </ul>
             </nav>
             <Routes>
