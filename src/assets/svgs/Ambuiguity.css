@@ -1,0 +1,34 @@
+.amb{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.amb h2{
+    margin-left: 10px;
+}
+#Head{
+    transform-origin:center ;
+    animation: headAnimation 1s alternate infinite ease-in-out;
+}
+#Exclamation{
+    animation: exlamationAnimation 1s alternate infinite ease-in-out;
+}
+#Question{
+    animation: exlamationAnimation 1s alternate infinite ease-in-out;
+}
+@keyframes headAnimation {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(10deg);
+    }
+}
+@keyframes exlamationAnimation {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(10px);;
+    }
+}

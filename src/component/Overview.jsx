@@ -3,6 +3,7 @@ import TriadicLogo from './Logo';
 import { useState , useEffect } from 'react';
 import { interpolateColor , hexToRgb , rgbToHex } from '../utils.js';
 import CompareIcon from '../assets/svgs/CompareIcon.jsx';
+import AmbuiguityIcon from '../assets/svgs/Ambuiguity.jsx';
 // import { useState , useEffect , useRef} from 'react'
 function Overview(){
     const [scrollY, setScrollY] = useState(0);
@@ -194,6 +195,7 @@ function Overview(){
                     </div>
                     <div className="key-features">
                         <CompareIcon />
+                        <AmbuiguityIcon />
                     </div>
                 </div>
                 <section id="key-features">
