@@ -65,7 +65,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(45deg ,#314755 , #26a0da);
+    background-image: linear-gradient(45deg , rgba(14, 14, 14, 0.11), #242424);
     height: 500px;
     width: 500px;
     border-radius: 10%;

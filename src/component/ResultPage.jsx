@@ -1,11 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
+import config from "./config.js";
 
 function ResultPage() {
     const [helpData, setHelpData] = useState(null);
 
     useEffect(() => {
-        fetch('https://triadicsqldb.onrender.com/result')
+        fetch(config.result_api)
             .then(response => response.json())
             .then(data => {
                 setHelpData(data);

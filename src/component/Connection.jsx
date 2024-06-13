@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import '../design/Connection.css'
 import TriadicLogo from './Logo';
+import config from './config.js';
 
 // eslint-disable-next-line react/prop-types
 function CreateAccount({ onCreateAccount , loginPageRender }) {
@@ -21,7 +22,7 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
                 throw new Error('Passwords do not match');
             }
 
-            const response = await fetch('https://triadicsqldb.onrender.com/ca', {
+            const response = await fetch(config.create_account_api, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -105,7 +106,7 @@ function Login( {onLogin , createPageRender} ) {
         //console.log(username);
         //console.log(password);
         try {
-            const response = await fetch('https://triadicsqldb.onrender.com/ln', {
+            const response = await fetch(config.login_api, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

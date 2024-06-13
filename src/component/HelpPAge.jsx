@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import config from "./config.js";
 
 function HelpPage() {
     const [helpData, setHelpData] = useState(null);
 
     useEffect(() => {
-        fetch('https://triadicsqldb.onrender.com/help')
+        fetch(config.help_api)
             .then(response => response.json())
             .then(data => {
                 setHelpData(data);

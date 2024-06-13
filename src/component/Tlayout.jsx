@@ -1,14 +1,15 @@
 import {useEffect, useRef, useState} from 'react';
 import MonacoEditor from 'react-monaco-editor';
 import * as monaco from 'monaco-editor';
-import  {Button}  from '@mui/material';
+import {Button, TextareaAutosize} from '@mui/material';
 import {Dialog} from '@mui/material';
 import {DialogActions} from '@mui/material';
 import {DialogContent} from '@mui/material';
 import customLanguage from "./CustomLan.js";
 import "../design/Tlayout.css"
 import OutputWindow from "./Output.jsx";
-import button from "bootstrap/js/src/button.js";
+import config from "./config.js";
+//import button from "bootstrap/js/src/button.js";
 // import Dropdown from './Dropdown.jsx';
 
 
@@ -85,7 +86,7 @@ const Tlayout = () => {
         const stoken = localStorage.getItem('token');
         console.log(stoken);
         try {
-            const response = await fetch('https://triadicsqldb.onrender.com/pq', {
+            const response = await fetch(config.process_query_api, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -161,9 +162,6 @@ const Tlayout = () => {
                     }}>Run</button>
                 <button onClick={increaseFontSize}>Inc Font</button>
                 <button onClick={decreaseFontSize}>Dec Font</button>
-                {/* <button onClick={() => changeTheme('hc-black')}>HC-Black</button>
-                <button onClick={() => changeTheme('vs-dark')}>VS-Dark</button>
-                <button onClick={() => changeTheme('vs-light')}>VS-light</button> */}
                 <button className='drop-down-button' onClick={handlingDropdownToggle}>Themes</button>
                 {isDropdownOpen && (
                     <ul className='drop-down-menu'>
@@ -172,29 +170,36 @@ const Tlayout = () => {
                         <li className = 'dropdown-item' onClick={() => changeTheme('vs-light')}>VS-Light</li>
                     </ul>
                 )}
-                {/* <Dropdown options={themeOptions} handleSelect={changeTheme} buttonName={'Theme'}/> */}
+
 
                 <button onClick={handleSave}>Save</button>
                 <text className= 'db_select'>Selected Database: {database} </text>
                 <input className='handleLoad' type="file" onChange={handleLoad}/>
             </div>
-            <div className={"row"}>
 
-                <div className={"column"}>
+            <div >
+
+
                     <MonacoEditor
                         width="100%"
-                        height="80vh"
+                        height="75vh"
                         language="customLanguage"
                         theme={theme}
                         value={inputMessage}
-                        options={{wordWrap: 'on', wordWrapColumn: 80, fontSize: fontSize}}
+
+                        options={{
+                            wordWrap: 'on',
+                            wordWrapColumn: 80,
+                            fontSize: fontSize,
+                        }}
                         onChange={handleEditorChange}
                         editorDidMount={(editor) => {
                             editorRef.current = editor;
                         }}
                         className="rounded-editor"
                     />
-                </div>
+
+
                 <Dialog open={dialogOpen} onClose={handleDialogClose} maxWidth="lg" fullWidth>
                     <DialogContent style={{
                         backgroundColor: theme === 'hc-black' || theme === 'vs-dark' ? '#403E3E' : 'white',
@@ -209,7 +214,7 @@ const Tlayout = () => {
                         <Button onClick={handleDialogClose}>Close</Button>
                     </DialogActions>
                 </Dialog>
-                                 
+
             </div>
         </>
     );

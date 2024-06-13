@@ -5,6 +5,7 @@ import AppRouter from "./component/Tnavi.jsx";
 import Connection from "./component/Connection.jsx";
 import {useEffect, useState} from "react";
 import Overview from './component/Overview.jsx';
+import config from "./component/config.js";
 // import VerifyToken from "./component/TokenChecker.jsx";
 
 
@@ -89,17 +90,18 @@ function App() {
     };
 
   return (
-        // <>
-        //      {isLoggedIn ? (
-        //          <>
-        //              <Theader />
-        //              <AppRouter onLogout={handleLogout} />
-        //          </>
-        //      ) : (
-        //          <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
-        //      )}
-        //  </>
-    <Overview/>
+
+         <>
+              {isLoggedIn ? (
+                  <>
+                      <Theader />
+                      <AppRouter onLogout={handleLogout} />
+                  </>
+              ) : (
+                  <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
+              )}
+          </>
+    //<Overview/>
     // <EditorPage/>
   )
 }
