@@ -6,6 +6,15 @@
 .compare h2{
     margin-left: 10px;
 }
+.compContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.compContent{
+    margin-top: 0px;
+}
 #SmallCircle{
     animation: smallCircleAnimation 2s infinite alternate;
 }

@@ -4,6 +4,7 @@ import { useState , useEffect } from 'react';
 import { interpolateColor , hexToRgb , rgbToHex } from '../utils.js';
 import CompareIcon from '../assets/svgs/CompareIcon.jsx';
 import AmbuiguityIcon from '../assets/svgs/Ambuiguity.jsx';
+import { MemoryControl } from '../assets/svgs/MemoryControl.jsx';
 // import { useState , useEffect , useRef} from 'react'
 function Overview(){
     const [scrollY, setScrollY] = useState(0);
@@ -190,12 +191,13 @@ function Overview(){
                 <div className="sections">
                 <div id="introduction" style={{background: calculateGradient()}}>
                     <div className="glass">
-                        <h2>Triadic SQL DB</h2>
+                        <h2>Triadic SQL Engine</h2>
                         <p>Welcome to Triadic SQL DB! Triadic SQL DB is web-based SQL engine that addresses the challenge of <strong>imperfect information</strong> in databases and offers an <strong>alternative</strong> to traditional <strong>binary</strong> and <strong>fuzzy logic-based systems</strong>.</p>
                     </div>
                     <div className="key-features">
                         <CompareIcon />
                         <AmbuiguityIcon />
+                        <MemoryControl />
                     </div>
                 </div>
                 <section id="key-features">

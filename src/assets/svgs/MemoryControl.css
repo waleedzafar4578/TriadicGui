@@ -1,0 +1,41 @@
+.mem{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mem h2{
+    margin-left: 10px;
+}
+#Slow{
+    animation: DataAnimation 3.141s alternate infinite;
+}
+#Medium{
+    animation: DataAnimation 2.718s alternate infinite;
+}
+#Fast{
+    animation: DataAnimation 1.414s alternate infinite;
+}
+#Gear{
+    transform-origin: center;
+    animation: GearAnimation 4s alternate infinite ease-in-out;
+}
+@keyframes GearAnimation {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+@keyframes DataAnimation {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
