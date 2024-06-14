@@ -1,12 +1,13 @@
 import "../design/Theader.css"
 import {useEffect, useState} from "react";
+import config from "./config.js";
 function Theader(){
     const [isConnected, setIsConnected] = useState(true); // Default to true
 
     useEffect(() => {
         const checkConnection = async () => {
             try {
-                const response = await fetch('https://triadicsqldb.onrender.com/health_check');
+                const response = await fetch(config.health_check_api);
 
                 if (response.ok) {
                     setIsConnected(true);
