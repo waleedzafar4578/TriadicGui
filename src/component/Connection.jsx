@@ -1,13 +1,9 @@
-/* eslint-disable react/prop-types */
-// CreateAccount.js
-
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import '../design/Connection.css'
 import TriadicLogo from './Logo';
 import config from './config.js';
 
-// eslint-disable-next-line react/prop-types
+
 function CreateAccount({ onCreateAccount , loginPageRender }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -127,7 +123,7 @@ function Login( {onLogin , createPageRender} ) {
                 // Call the onLogin callback with the token
                 onLogin(token);
             }else {
-                alert(data.ans);
+                alert(data.related_info);
             }
 
 

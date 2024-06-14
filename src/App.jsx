@@ -39,36 +39,36 @@ function App() {
         const checktoken = async () => {
 
                 const token=localStorage.getItem('token');
-                const response = await fetch('https://triadicsqldb.onrender.com/checkt', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({token}),
-                });
-                console.log(response);
-                if (!response.ok) {
-                    localStorage.removeItem('token');
-                    throw new Error('Something wrong when check token');
-                }
-                const data = await response.json();
-
-
-                if (!data.find_token){
-                    localStorage.removeItem('token');
-                    console.log('Token removed from local storage because server discontinue with this token.');
-                    window.location.reload();
-                }
-
+               
+                    const response = await fetch(config.token_check_api, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({token}),
+                    });
+                    console.log(response);
+                    if (!response.ok) {
+                        localStorage.removeItem('token');
+                        throw new Error('Something wrong when check token');
+                    }
+                    const data = await response.json();
+    
+    
+                    if (!data.find_token){
+                        localStorage.removeItem('token');
+                        console.log('Token removed from local storage because server discontinue with this token.');
+                        window.location.reload();
+                    }
 
         };
 
+
         // Check connection every 5 seconds (adjust as needed)
-        const intervalId = setInterval(checktoken, 5000);
-
-        // Clear the interval on component unmount
-        return () => clearInterval(intervalId);
-
+            const intervalId = setInterval(checktoken, 5000);
+            // Clear the interval on component unmount
+            return () => clearInterval(intervalId);
+        
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); // Empty dependency array to run only once on mount
 

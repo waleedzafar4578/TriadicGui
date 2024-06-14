@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from 'react';
 import MonacoEditor from 'react-monaco-editor';
 import * as monaco from 'monaco-editor';
-import {Button, TextareaAutosize} from '@mui/material';
+import {Button} from '@mui/material';
 import {Dialog} from '@mui/material';
 import {DialogActions} from '@mui/material';
 import {DialogContent} from '@mui/material';
@@ -153,6 +153,33 @@ const Tlayout = () => {
         reader.readAsText(file);
     };
     const [database, setDatabase] = useState("None");
+    useEffect(() => {
+        const database_name = async () => {
+
+            const token=localStorage.getItem('token');
+            const response = await fetch(config.get_database_api, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({token}),
+            });
+
+
+
+            const data = await response.json();
+            console.log(data);
+            setDatabase(data);
+
+        };
+        // Check connection every 1 second (adjust as needed)
+        const intervalId = setInterval(database_name, 1000);
+        // Clear the interval on component unmount
+        return () => clearInterval(intervalId);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); // Empty dependency array to run only once on mount
+
+
     return (
         <>
             <div id={"btt"}>
