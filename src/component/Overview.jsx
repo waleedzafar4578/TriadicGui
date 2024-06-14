@@ -200,10 +200,6 @@ function Overview(){
                         <MemoryControl />
                     </div>
                 </div>
-                <section id="key-features">
-                    <h2>Key Features</h2>
-                    
-                </section>
                 <section id="benefits">
                     <h2>Benefits</h2>
                     <p>Introduction of the product</p>
