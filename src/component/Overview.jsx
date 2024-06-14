@@ -5,6 +5,8 @@ import { interpolateColor , hexToRgb , rgbToHex } from '../utils.js';
 import CompareIcon from '../assets/svgs/CompareIcon.jsx';
 import AmbuiguityIcon from '../assets/svgs/Ambuiguity.jsx';
 import { MemoryControl } from '../assets/svgs/MemoryControl.jsx';
+import CodeBlock from './CodeBlock.jsx';
+import Snippets from '../assets/codeSnippets';
 // import { useState , useEffect , useRef} from 'react'
 function Overview(){
     const [scrollY, setScrollY] = useState(0);
@@ -200,18 +202,20 @@ function Overview(){
                         <MemoryControl />
                     </div>
                 </div>
-                <section id="benefits">
+                {/* <section id="benefits">
                     <h2>Benefits</h2>
                     <p>Introduction of the product</p>
                 </section>
                 <section id="user-guide">
                     <h2>User Guide</h2>
                     <p>Introduction of the product</p>
-                </section>
-                <section id="demo">
-                    <h2>Demo</h2>
-                    <p>Introduction of the product</p>
-                </section>
+                </section> */}
+                <div id="demo">
+                    <CodeBlock code={Snippets.MySQLCreateTable} lang="sql"/>
+                    <CodeBlock code={Snippets.TriadicSQLCreateTable} lang="sql"/>
+                    <CodeBlock code={Snippets.InsertValuesMySQL} lang="sql" />
+                    <CodeBlock code={Snippets.InsertValueTriadicSQL} lang="sql"/>
+                </div>
                 <section id="special-thanks">
                     <h2>Special Thanks</h2>
                     <p>Introduction of the product</p>

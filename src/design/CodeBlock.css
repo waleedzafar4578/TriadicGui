@@ -1,0 +1,8 @@
+.CBContainer{
+    border-radius: 15px;
+    background-color: #282c34;
+    padding:  0px 15px;
+}
+.hljs-datatype {
+  color: blue;  /* Customize the color as needed */
+}
