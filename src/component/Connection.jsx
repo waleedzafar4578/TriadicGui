@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import '../design/Connection.css'
 import TriadicLogo from './Logo';
 import config from './config.js';

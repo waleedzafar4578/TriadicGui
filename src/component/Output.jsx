@@ -39,6 +39,10 @@ const OutputWindow = ({ status, output }) => {
             return rowData;
         })
         : [];
+    let words="";
+        if (status==="Db"){
+            words=output.split(' ');
+        }
 
     return (
         <>
@@ -52,6 +56,18 @@ const OutputWindow = ({ status, output }) => {
             )}
             {status === "QP" && (
                 <p>{output}</p>
+            )}
+            {status === "Db" && (
+                <>
+                    <h4>Available Databases</h4>
+                    <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'start'}}>
+                        {words.map((word, index) => (
+                            // Step 2: Map each word to a JSX element
+                            <li key={index}>{word}</li>
+                        ))}
+                    </ul>
+                </>
+
             )}
         </>
     );
