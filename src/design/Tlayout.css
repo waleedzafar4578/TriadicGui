@@ -8,7 +8,10 @@
     border: #2C3333;
     border-radius: 3px;
 }
-
+.dropdown{
+    display: inline;
+    position: relative;
+}
 /* Clear floats after the columns */
 .row:after {
     /* content: "";
@@ -18,19 +21,14 @@
 .drop-down-menu{
     position: absolute;
     z-index: 10;
-    left:27%;
-
+    left: 52%;
     transform: translateX(-50%);
     transition: 0.5s;
     width: 100px;
     text-align: center;
     border-radius: 0.5em;
 }
-@media screen and (min-width: 768px) {
-    .drop-down-menu {
-        left: 27%; /* Example of adjusting left percentage for larger screens */
-    }
-}
+
 .database-menu{
     position: absolute;
     z-index: 10;
@@ -70,7 +68,7 @@
     }
 }
 .handleLoad{
-    border-radius: 18px;
+    /* border-radius: 18px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
     font-size: 1em;
@@ -80,7 +78,8 @@
     cursor: pointer;
     transition: border-color 0.25s;
     float:right;
-    margin-top: -2px;
+    margin-top: -2px; */
+    display: none;
 }
 .custom-file-upload {
     border: 1px solid #353535;

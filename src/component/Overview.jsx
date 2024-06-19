@@ -178,16 +178,6 @@ function Overview(){
     // } , [])
     return(
         <div className="overviewContainer">
-            {/* <div className="toc-container" ref={sidebarRef}>
-                <ul className="tableOfContent">
-                    <li><a className={activeClass === 'Introduction' ? 'active-class' : ''} onClick={() => handleActiveClass('Introduction')} href="#introduction">Introduction</a></li>
-                    <li><a className={activeClass === 'Key Features' ? 'active-class' : ''} onClick={() => handleActiveClass('Key Features')} href="#key-features">Key Features</a></li>
-                    <li><a className={activeClass === 'Benefits' ? 'active-class' : ''} onClick={() => handleActiveClass('Benefits')} href="#benefits">Benefits</a></li>
-                    <li><a className={activeClass === 'User Guide' ? 'active-class' : ''} onClick={() => handleActiveClass('User Guide')} href="#user-guide">User Guide</a></li>
-                    <li><a className={activeClass === 'Demo' ? 'active-class' : ''} onClick={() => handleActiveClass('Demo')} href="#demo">Demo</a></li>
-                    <li><a className={activeClass === 'Special Thanks' ? 'active-class' : ''} onClick={() => handleActiveClass('Special Thanks')} href="#special-thanks">Special Thanks</a></li>
-                </ul>
-            </div> */}
             <TriadicLogo mode="linear"/>
             <div className="content">
                 <div className="sections">
@@ -222,7 +212,6 @@ function Overview(){
                 </section>
                 </div>
             </div>
-            
         </div>
     )
 }

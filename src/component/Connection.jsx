@@ -46,7 +46,7 @@ function CreateAccount({ onCreateAccount , loginPageRender }) {
     return (
         <div className="create-account-section">
             <div className='create-account-container'>
-                <h2>Create Account</h2>
+                <h2 className='heading'>Create Account</h2>
                 {error && <p>{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div>

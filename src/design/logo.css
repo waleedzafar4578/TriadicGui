@@ -28,6 +28,7 @@
     font-family: 'Quicksand' , sans-serif;
     color: #0092CB;
     margin-left: -50px;
+    text-align: center;
 }
 /* #Top{
     transform-origin: center;
@@ -55,5 +56,15 @@
     }
     100%{
         transform: rotateZ(360deg);
+    }
+}
+@media (max-width: 835px){
+    .container{
+        flex-direction: column;
+        width: 100vw;
+    }
+    .productName{
+        margin-left: 0px;
+        margin-top: -40px;
     }
 }

@@ -23,6 +23,7 @@ const Tlayout = () => {
     const editorRef = useRef(null);
     const [fontSize, setFontSize] = useState(14);
     const [theme, setTheme] = useState('hc-black');
+    const fileInputRef = useRef();
 
 
     useEffect(() => {
@@ -152,6 +153,10 @@ const Tlayout = () => {
         };
         reader.readAsText(file);
     };
+    function handleInputFileCLick()
+    {
+        fileInputRef.current.click();
+    }
     const [database, setDatabase] = useState("None");
     useEffect(() => {
         const database_name = async () => {
@@ -189,19 +194,22 @@ const Tlayout = () => {
                     }}>Run</button>
                 <button onClick={increaseFontSize}>Inc Font</button>
                 <button onClick={decreaseFontSize}>Dec Font</button>
-                <button className='drop-down-button' onClick={handlingDropdownToggle}>Themes</button>
-                {isDropdownOpen && (
-                    <ul className='drop-down-menu'>
-                        <li className = 'dropdown-item' onClick={() => changeTheme('hc-black')}>HC-Black</li>
-                        <li className = 'dropdown-item' onClick={() => changeTheme('vs-dark')}>VS-Dark</li>
-                        <li className = 'dropdown-item' onClick={() => changeTheme('vs-light')}>VS-Light</li>
-                    </ul>
-                )}
+                <div className="dropdown">
+                    <button className='drop-down-button' onClick={handlingDropdownToggle}>Themes</button>
+                    {isDropdownOpen && (
+                        <ul className='drop-down-menu'>
+                            <li className = 'dropdown-item' onClick={() => changeTheme('hc-black')}>HC-Black</li>
+                            <li className = 'dropdown-item' onClick={() => changeTheme('vs-dark')}>VS-Dark</li>
+                            <li className = 'dropdown-item' onClick={() => changeTheme('vs-light')}>VS-Light</li>
+                        </ul>
+                    )}
+                </div>
 
 
                 <button onClick={handleSave}>Save</button>
+                <button onClick={handleInputFileCLick}>Select File</button>
                 <text className= 'db_select'>Selected Database: {database} </text>
-                <input className='handleLoad' type="file" onChange={handleLoad}/>
+                <input className='handleLoad' type="file" onChange={handleLoad} ref={fileInputRef}/>
             </div>
 
             <div >
@@ -209,7 +217,7 @@ const Tlayout = () => {
 
                     <MonacoEditor
                         width="100%"
-                        height="75vh"
+                        height="89vh"
                         language="customLanguage"
                         theme={theme}
                         value={inputMessage}

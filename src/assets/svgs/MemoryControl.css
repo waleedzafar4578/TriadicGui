@@ -49,3 +49,8 @@
         opacity: 1;
     }
 }
+@media (max-width: 835px) {
+    .memContent{
+        margin-bottom: 50px;
+    }
+}

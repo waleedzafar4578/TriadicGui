@@ -65,7 +65,6 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(45deg , rgba(14, 14, 14, 0.11), #242424);
     height: 500px;
     width: 500px;
     border-radius: 10%;
@@ -151,7 +150,6 @@ label{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(45deg ,#314755 , #26a0da);
     height: 500px;
     width: 500px;
     border-radius: 10%;
@@ -163,4 +161,34 @@ label{
 }
 .alreadyAccount{
     display: block;
+}
+
+@media (max-width: 560px){
+    .create-account-section{
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+    .login{
+        flex-direction: column;
+        margin: 0px;
+    }
+    .left{
+        height: 20vh;
+        width: 20vw;
+        margin-bottom: 100px;
+        margin-top: 30px;
+    }
+    .right{
+        height: 20vh;
+        width: 20vw;
+        margin-bottom: 110px;
+        margin-top: 30px;
+    }
+    .login-container , .create-account-container{
+        height: 30vh;
+        width: 30vw;
+    }
+    .heading{
+        display: none;
+    }
 }

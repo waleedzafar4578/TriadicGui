@@ -40,8 +40,7 @@
 } */
 
 .overviewContainer{
-    /* display: grid;
-    grid-template-columns: 27.5% 72.5%; */
+    width: 100vw;
 }
 /* .tableOfContent{
     display: flex;
@@ -115,4 +114,29 @@
     grid-template-columns: 45% 45%;
     gap: 30px;
     justify-content: center;
+}
+@media (max-width: 835px){
+    .overviewContainer{
+        width: 100vw;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .key-features{
+        display: block;
+    }
+    .glass{
+        margin-top:50px ;
+    }
+}
+@media (max-width: 582px){
+    .glass{
+        width: 90vw;
+    }
+}
+@media (max-width: 330px) {
+    .glass{
+        height: 60vh;
+    }
+    
 }
