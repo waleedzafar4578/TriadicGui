@@ -9,6 +9,7 @@ import customLanguage from "./CustomLan.js";
 import "../design/Tlayout.css"
 import OutputWindow from "./Output.jsx";
 import config from "./config.js";
+import Drawer from './Drawer.jsx';
 //import button from "bootstrap/js/src/button.js";
 // import Dropdown from './Dropdown.jsx';
 
@@ -25,7 +26,8 @@ const Tlayout = () => {
     const [theme, setTheme] = useState('hc-black');
     const fileInputRef = useRef();
 
-
+    const [isDrawer , setIsDrawer] = useState(window.innerWidth < 825);
+    const [drawerOpen , setDrawerOpen] = useState(false);
     useEffect(() => {
         monaco.languages.register({ id: 'customLanguage' });
         monaco.languages.setMonarchTokensProvider('customLanguage', customLanguage);
@@ -38,7 +40,7 @@ const Tlayout = () => {
         }
 
     }, [inputMessage]);
-
+    console.log(isDrawer)
     useEffect(() => {
         // Load content from local storage if available
         const savedContent = localStorage.getItem('editorContent');
@@ -46,12 +48,26 @@ const Tlayout = () => {
             setInputMessage(savedContent);
         }
     }, []);
+    useEffect(() => {
+        function handleDrawer()
+        {
+            setIsDrawer(window.innerWidth < 825);
+        }
+        window.addEventListener('resize' , handleDrawer)
+        return () => {
+            window.removeEventListener('resize' , handleDrawer);
+        }
+    } , [])
+    function toggleDrawer()
+    {
+        setDrawerOpen(!drawerOpen);
+    }
     //Handling Dropdown Opening and Closing
     function handlingDropdownToggle()
     {
         setIsDropdownOpen(!isDropdownOpen);
     }
-
+    
     // Function to handle editor content change
     const handleEditorChange = (newValue) => {
         setInputMessage(newValue);
@@ -183,11 +199,16 @@ const Tlayout = () => {
         return () => clearInterval(intervalId);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); // Empty dependency array to run only once on mount
+    const props = {increaseFontSize: increaseFontSize,
+                   decreaseFontSize: decreaseFontSize,
+                   handleSave: handleSave
+                  }
 
 
     return (
         <>
-            <div id={"btt"}>
+            {!isDrawer ? 
+                <div id={"btt"}>
                 <button onClick={() => {
                     handleButtonClick(true);
                     handleDialogOpen();
@@ -211,6 +232,17 @@ const Tlayout = () => {
                 <text className= 'db_select'>Selected Database: {database} </text>
                 <input className='handleLoad' type="file" onChange={handleLoad} ref={fileInputRef}/>
             </div>
+            : 
+            <div className='drawer-menu'>
+                <button onClick={() => {
+                    handleButtonClick(true);
+                    handleDialogOpen();
+                    }}>Run</button>
+                <text className= 'db_select'>Selected Database: {database} </text>
+                <button onClick={toggleDrawer}>Open</button>
+                <Drawer isOpen={drawerOpen} toggleDrawer={toggleDrawer} {...props}/>
+            </div>
+            }
 
             <div >
 
