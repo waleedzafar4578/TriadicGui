@@ -13,7 +13,7 @@
     text-align: center;
 }
 .compContent{
-    margin-top: 0px;
+    margin-top: 10px;
 }
 #SmallCircle{
     animation: smallCircleAnimation 2s infinite alternate;
