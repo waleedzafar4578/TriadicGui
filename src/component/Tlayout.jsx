@@ -239,8 +239,8 @@ const Tlayout = () => {
                     handleDialogOpen();
                     }}>Run</button>
                 <text className= 'db_select'>Selected Database: {database} </text>
-                <button onClick={toggleDrawer}>Open</button>
-                <Drawer isOpen={drawerOpen} toggleDrawer={toggleDrawer} {...props}/>
+                {!drawerOpen ? <button onClick={toggleDrawer}>Open</button> :
+                <Drawer isOpen={drawerOpen} toggleDrawer={toggleDrawer} {...props}/>}
             </div>
             }
 
