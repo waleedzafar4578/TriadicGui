@@ -201,15 +201,11 @@ function Overview(){
                     <p>Introduction of the product</p>
                 </section> */}
                 <div id="demo">
-                    <CodeBlock code={Snippets.MySQLCreateTable} lang="sql"/>
+                    <h2>Creating A Table</h2>
                     <CodeBlock code={Snippets.TriadicSQLCreateTable} lang="sql"/>
-                    <CodeBlock code={Snippets.InsertValuesMySQL} lang="sql" />
+                    <h2>Inserting Data Into Table</h2>
                     <CodeBlock code={Snippets.InsertValueTriadicSQL} lang="sql"/>
                 </div>
-                <section id="special-thanks">
-                    <h2>Special Thanks</h2>
-                    <p>Introduction of the product</p>
-                </section>
                 </div>
             </div>
         </div>

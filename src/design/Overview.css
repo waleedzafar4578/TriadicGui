@@ -110,10 +110,7 @@
     flex-direction: row;
 }
 #demo{
-    display: grid;
-    grid-template-columns: 45% 45%;
-    gap: 30px;
-    justify-content: center;
+    
 }
 @media (max-width: 835px){
     .overviewContainer{
