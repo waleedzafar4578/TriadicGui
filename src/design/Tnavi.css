@@ -3,6 +3,8 @@
 
 }
 ul {
+    display: flex;
+    align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -17,7 +19,7 @@ li a {
     text-decoration: none;
 }
 li {
-    float: left;
+    float: right;
 }
 .menu-item a:hover:not(.active) {
     background-color: #2E4F4F;

@@ -28,6 +28,7 @@ const Tlayout = () => {
 
     const [isDrawer , setIsDrawer] = useState(window.innerWidth < 825);
     const [drawerOpen , setDrawerOpen] = useState(false);
+    
     useEffect(() => {
         monaco.languages.register({ id: 'customLanguage' });
         monaco.languages.setMonarchTokensProvider('customLanguage', customLanguage);

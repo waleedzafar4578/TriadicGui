@@ -7,6 +7,8 @@ import AmbuiguityIcon from '../assets/svgs/Ambuiguity.jsx';
 import { MemoryControl } from '../assets/svgs/MemoryControl.jsx';
 import CodeBlock from './CodeBlock.jsx';
 import Snippets from '../assets/codeSnippets';
+import Example from './Example.jsx';
+import Tdata from '../assets/exampleTables.js';
 // import { useState , useEffect , useRef} from 'react'
 function Overview(){
     const [scrollY, setScrollY] = useState(0);
@@ -201,10 +203,8 @@ function Overview(){
                     <p>Introduction of the product</p>
                 </section> */}
                 <div id="demo">
-                    <h2>Creating A Table</h2>
-                    <CodeBlock code={Snippets.TriadicSQLCreateTable} lang="sql"/>
-                    <h2>Inserting Data Into Table</h2>
-                    <CodeBlock code={Snippets.InsertValueTriadicSQL} lang="sql"/>
+                    <Example exampleCode={Snippets.TriadicSQLCreateTable} language="sql" heading="Creating A Table" showTable={false}/>
+                    <Example exampleCode={Snippets.InsertValueTriadicSQL} language="sql" heading="Inserting Data Into Table" showTable={true} Tdata={Tdata.InsertCommand}/>
                 </div>
                 </div>
             </div>
