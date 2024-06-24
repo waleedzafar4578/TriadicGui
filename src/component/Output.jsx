@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ReactTabulator } from 'react-tabulator';
 import 'tabulator-tables/dist/css/tabulator_site_dark.min.css';
 import "../design/Output.css";
+import {colors} from "@mui/material";
 
 const OutputWindow = ({ status, output }) => {
     const [data, setData] = useState(null);
@@ -40,7 +41,7 @@ const OutputWindow = ({ status, output }) => {
         })
         : [];
     let words="";
-        if (status==="Db"){
+        if (status==="Db" ||status==="Tb" ){
             words=output.split(' ');
         }
 
@@ -68,6 +69,20 @@ const OutputWindow = ({ status, output }) => {
                     </ul>
                 </>
 
+            )}
+            {status === "Tb" && (
+                <>
+                    <h4>Available Tables In Selected Database</h4>
+                    <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'start'}}>
+                        {words.map((word, index) => (
+                            <li key={index}>{word}</li>
+                        ))}
+                    </ul>
+                </>
+
+            )}
+            {status === "Err" && (
+                <p style={{color: 'red'}}>{output}</p>
             )}
         </>
     );
