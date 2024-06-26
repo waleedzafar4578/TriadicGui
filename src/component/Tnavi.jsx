@@ -13,6 +13,7 @@ const handleLogout = () => {
     console.log("Logout function");
     localStorage.removeItem('token');
     window.location.reload();
+    window.location.href = 'https://waleedzafar4578.github.io/TriadicGui/';
 };
 const AppRouter = () => {
     return (

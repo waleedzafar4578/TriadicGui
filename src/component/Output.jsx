@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { ReactTabulator } from 'react-tabulator';
 import 'tabulator-tables/dist/css/tabulator_site_dark.min.css';
 import "../design/Output.css";
-import {colors} from "@mui/material";
 
 const OutputWindow = ({ status, output }) => {
     const [data, setData] = useState(null);

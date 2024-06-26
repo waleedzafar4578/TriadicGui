@@ -23,6 +23,8 @@ function VerifyToken() {
                     console.log("Inside the verify condition");
                     // Token is not valid, remove it from localStorage
                     localStorage.removeItem('token');
+                    window.location.reload();
+                    window.location.href = 'https://waleedzafar4578.github.io/TriadicGui/';
                 }
             })
             .catch(error => {
