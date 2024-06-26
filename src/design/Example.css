@@ -1,33 +1,40 @@
-.exapmleContainer{
-    display: flex;
+/* src/styles.css */
+.container {
+    margin: 15px auto;
+    max-width: 800px;
     flex-direction: column;
-    justify-content: center;
-    
+    padding: 5px;
+    border: 1px solid #0e8388;
+    border-radius: 8px;
+    background-color: rgba(14, 14, 14, 0.08);
 }
-.heading{
-    color: #0F4C81;
-}
-.description{
-    color: #3E73A1;
-}
-.syntax{
-    color: #0F4C81;
-    margin-top: 30px;
+
+
+.container h3 {
+    color:#0e8388 ;
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
-.example{
-    margin-top: 10px;
+.container h6{
+    color: #9fb39f;
+    font-size: 1.5em;
     margin-bottom: 10px;
-    color: #0F4C81;
 }
-.tabulator{
-    margin-top: 10px;
-    border-radius: 10px;
-    width: 45vw;
+
+.container p {
+    font-size: 1.1em;
+    line-height: 1.5;
 }
-.table{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+
+.code-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.code-container pre {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #282c34;
+    color: #ffffff;
+    overflow-x: auto;
 }

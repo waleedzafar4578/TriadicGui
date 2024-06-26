@@ -7,24 +7,25 @@ import '../design/Result.css'
 import Example from './Example.jsx';
 import Descriptions from '../assets/descriptions.js';
 import Tdata from '../assets/exampleTables.js';
+import ShowCode from "./Example.jsx";
+import { codeExamplesData } from '../data/codeExamples';
+
 
 function ResultPage() {
-    const [helpData, setHelpData] = useState(null);
-
-    useEffect(() => {
-        fetch(config.result_api)
-            .then(response => response.json())
-            .then(data => {
-                setHelpData(data);
-            })
-            .catch(error => {
-                console.error('Error fetching help data:', error);
-            });
-    }, []);
-
     return (
-        <div className='pop'>
-            <Example exampleCode={Snippets.InsertValueTriadicSQL} language='sql' heading="INSERT INTO" description={Descriptions.InsertDescription} showTable={true} Tdata={Tdata.InsertCommand} showAfterExampleDescription={false} syntax={Snippets.InsertSyntax}/>
+        <div>
+            {/* eslint-disable-next-line react/no-unknown-property */}
+            <h1 align="center">Quick Start</h1>
+            {codeExamplesData.map((exampleData, index) => (
+                <ShowCode
+                    key={index}
+                    title={exampleData.title}
+                    intro={exampleData.intro}
+                    command={exampleData.command}
+                    description={exampleData.description}
+                    examples={exampleData.examples}
+                />
+            ))}
         </div>
     );
 }
