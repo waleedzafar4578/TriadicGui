@@ -99,6 +99,7 @@
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(20px);
+    margin-top: 20px;
  }
  .glass h2{
     font-family: 'Montserrat' , sans-serif;

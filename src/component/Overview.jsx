@@ -183,29 +183,17 @@ function Overview(){
             <TriadicLogo mode="linear"/>
             <div className="content">
                 <div className="sections">
-                <div id="introduction" style={{background: calculateGradient()}}>
-                    <div className="glass">
-                        <h2>Triadic SQL Engine</h2>
-                        <p>Welcome to Triadic SQL DB! Triadic SQL DB is web-based SQL engine that addresses the challenge of <strong>imperfect information</strong> in databases and offers an <strong>alternative</strong> to traditional <strong>binary</strong> and <strong>fuzzy logic-based systems</strong>.</p>
+                    <div id="introduction" style={{background: calculateGradient()}}>
+                        <div className="glass">
+                            <h2>Triadic SQL Engine</h2>
+                            <p>Welcome to Triadic SQL Engine! Triadic SQL DB is web-based SQL engine that addresses the challenge of <strong>imperfect information</strong> in databases and offers an <strong>alternative</strong> to traditional <strong>binary</strong> and <strong>fuzzy logic-based systems</strong>.</p>
+                        </div>
+                        <div className="key-features">
+                            <CompareIcon />
+                            <AmbuiguityIcon />
+                            <MemoryControl />
+                        </div>
                     </div>
-                    <div className="key-features">
-                        <CompareIcon />
-                        <AmbuiguityIcon />
-                        <MemoryControl />
-                    </div>
-                </div>
-                {/* <section id="benefits">
-                    <h2>Benefits</h2>
-                    <p>Introduction of the product</p>
-                </section>
-                <section id="user-guide">
-                    <h2>User Guide</h2>
-                    <p>Introduction of the product</p>
-                </section> */}
-                <div id="demo">
-                    <Example exampleCode={Snippets.TriadicSQLCreateTable} language="sql" heading="Creating A Table" showTable={false}/>
-                    <Example exampleCode={Snippets.InsertValueTriadicSQL} language="sql" heading="Inserting Data Into Table" showTable={true} Tdata={Tdata.InsertCommand}/>
-                </div>
                 </div>
             </div>
         </div>

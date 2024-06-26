@@ -22,7 +22,7 @@ export default function CompareIcon()
                 <h2>Normalization</h2>
             </div>
             <p className='compContent'>
-                <strong>Normalization</strong> is a hectic and time consuming processes. Triadic SQL Engine provides <strong>automated normalization</strong>, saving a lot of time and effort and also enhancing the data quality. 
+                <strong>Normalization</strong> is a hectic and time consuming processes. Triadic SQL Engine provides <strong>partial automated normalization</strong>, saving a lot of time and effort and also enhancing the data quality. 
             </p>
         </div>
     )

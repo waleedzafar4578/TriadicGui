@@ -1,6 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import config from "./config.js";
+import CodeBlock from './CodeBlock.jsx';
+import Snippets from '../assets/codeSnippets.js';
+import '../design/Result.css'
 
 function ResultPage() {
     const [helpData, setHelpData] = useState(null);
@@ -17,9 +20,8 @@ function ResultPage() {
     }, []);
 
     return (
-        <div>
-            <h1>Result</h1>
-            {helpData && <p>{helpData.message}</p>}
+        <div className='pop'>
+            <CodeBlock code={Snippets.InsertValueTriadicSQL} lang='sql' />
         </div>
     );
 }

@@ -33,7 +33,7 @@ export function MemoryControl(){
                 <h2>Data Control</h2>
             </div>
             <p className='memContent'>
-                Binary and Fuzzy works with only true values but unlike Binary and Fuzzy, Triadic works with <strong>3</strong> different degrees <strong>(T, L, F)</strong>. By using these degrees the user gets more control over data and can deal with <strong>undetermined data</strong> and <strong>manuplate data</strong> on a whole new level.
+                Binary works with only true values and Fuzzy has infinite values which is impossible to implement, Triadic works with <strong>3</strong> different degrees <strong>(T, L, F)</strong>. By using these degrees the user gets more control over data and can deal with <strong>undetermined data</strong> and <strong>manuplate data</strong> on a whole new level.
             </p>
         </div>
     )
