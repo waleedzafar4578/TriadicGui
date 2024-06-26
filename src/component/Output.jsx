@@ -44,47 +44,61 @@ const OutputWindow = ({ status, output }) => {
             words=output.split(' ');
         }
 
+
+
+        const statusMessages = {
+        Err: "Error occurred. Please try again.",
+        keyword_miss: "Keyword missing in input.",
+        duplicate_values: "Duplicate values found.",
+        // Add more status messages as needed
+    };
+
     return (
         <>
-            <h6>{status}</h6>
-            {status === "Table" && data && (
-                <div>
-                    <h2>Table: {data.table_name}</h2>
-                    <h3>Columns: {data.column_name.join(', ')}</h3>
-                    <ReactTabulator data={tableData} columns={tableColumns} layout={"fitColumns"} />
-                </div>
-            )}
-            {status === "QP" && (
-                <p>{output}</p>
-            )}
-            {status === "Db" && (
-                <>
-                    <h4>Available Databases</h4>
-                    <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'start'}}>
-                        {words.map((word, index) => (
-                            // Step 2: Map each word to a JSX element
-                            <li key={index}>{word}</li>
-                        ))}
-                    </ul>
-                </>
+        <h6>{status}</h6>
+        {status === "Table" && data && (
+            <div>
+                <h2>Table: {data.table_name}</h2>
+                <h3>Columns: {data.column_name.join(', ')}</h3>
+                <ReactTabulator data={tableData} columns={tableColumns} layout={"fitColumns"}/>
+            </div>
+        )}
+        {status === "QP" && (
+            <p>{output}</p>
+        )}
+        {status === "Db" && (
+            <>
+                <h4>Available Databases</h4>
+                <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'start'}}>
+                    {words.map((word, index) => (
+                        // Step 2: Map each word to a JSX element
+                        <li key={index}>{word}</li>
+                    ))}
+                </ul>
+            </>
 
-            )}
-            {status === "Tb" && (
-                <>
-                    <h4>Available Tables In Selected Database</h4>
-                    <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'start'}}>
-                        {words.map((word, index) => (
-                            <li key={index}>{word}</li>
-                        ))}
-                    </ul>
-                </>
+        )}
+        {status === "Tb" && (
+            <>
+                <h4>Available Tables In Selected Database</h4>
+                <ul style={{display: 'flex', flexDirection: 'column', alignItems: 'start'}}>
+                    {words.map((word, index) => (
+                        <li key={index}>{word}</li>
+                    ))}
+                </ul>
+            </>
 
-            )}
-            {status === "Err" && (
-                <p style={{color: 'red'}}>{output}</p>
-            )}
-        </>
-    );
+        )}
+        {status && (
+            <>
+                <h3 style={{color: 'red'}}>{output}</h3>
+                <p style={{color: 'red'}}>{statusMessages[status]}</p>
+            </>
+    )
+}
+</>
+)
+    ;
 };
 
 export default OutputWindow;
