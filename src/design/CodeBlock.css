@@ -9,6 +9,7 @@
     -5px -5px 20px rgba(255, 255, 255, 0.5);
     width: 50vw;
     padding: 20px;
+    margin-bottom: 20px;
 }
 .hljs-datatype {
   color: blue;  /* Customize the color as needed */

@@ -11,5 +11,7 @@ const Snippets = {
            (2:T , "Alehandro":F , "Suarez":L , 3.73:T),
            (3:L , "Benjamin":L , "Alvido":T , 2.98:F),
            (4:F , "Cotral":T ,  "Jacobson":F , 3.13:L);`,
+    InsertSyntax: `INSERT INTO table_name (column_1 , column_2, ...)
+    VALUES (value_1, value_2, ...);`
 }
 export default Snippets

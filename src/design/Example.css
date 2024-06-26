@@ -1,5 +1,33 @@
 .exapmleContainer{
-    display: grid;
-    grid-template-columns: 45% 45%;
-    column-gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.heading{
+    color: #0F4C81;
+}
+.description{
+    color: #3E73A1;
+}
+.syntax{
+    color: #0F4C81;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.example{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #0F4C81;
+}
+.tabulator{
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 45vw;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }

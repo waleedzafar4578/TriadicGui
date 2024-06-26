@@ -4,6 +4,9 @@ import config from "./config.js";
 import CodeBlock from './CodeBlock.jsx';
 import Snippets from '../assets/codeSnippets.js';
 import '../design/Result.css'
+import Example from './Example.jsx';
+import Descriptions from '../assets/descriptions.js';
+import Tdata from '../assets/exampleTables.js';
 
 function ResultPage() {
     const [helpData, setHelpData] = useState(null);
@@ -21,7 +24,7 @@ function ResultPage() {
 
     return (
         <div className='pop'>
-            <CodeBlock code={Snippets.InsertValueTriadicSQL} lang='sql' />
+            <Example exampleCode={Snippets.InsertValueTriadicSQL} language='sql' heading="INSERT INTO" description={Descriptions.InsertDescription} showTable={true} Tdata={Tdata.InsertCommand} showAfterExampleDescription={false} syntax={Snippets.InsertSyntax}/>
         </div>
     );
 }
