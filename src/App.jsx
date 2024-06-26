@@ -4,9 +4,9 @@ import './App.css'
 import AppRouter from "./component/Tnavi.jsx";
 import Connection from "./component/Connection.jsx";
 import {useEffect, useState} from "react";
-import Overview from './component/Overview.jsx';
+//import Overview from './component/Overview.jsx';
 import config from "./component/config.js";
-import EditorPage from './component/EditorPage.jsx';
+//import EditorPage from './component/EditorPage.jsx';
 // import VerifyToken from "./component/TokenChecker.jsx";
 
 

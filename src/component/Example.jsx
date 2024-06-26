@@ -15,7 +15,7 @@ const ShowCode = ({ title, intro, command, description, examples }) => {
     };
 
     return (
-        <div className="container">
+        <div className="code_show_main">
             <h3>{title}</h3>
             <h6>{intro}</h6>
             <div className="code-container">

@@ -1,5 +1,5 @@
 /* src/styles.css */
-.container {
+.code_show_main {
     margin: 15px auto;
     max-width: 800px;
     flex-direction: column;
@@ -10,18 +10,18 @@
 }
 
 
-.container h3 {
+.code_show_main h3 {
     color:#0e8388 ;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
-.container h6{
+.code_show_main h6{
     color: #9fb39f;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
-.container p {
+.code_show_main p {
     font-size: 1.1em;
     line-height: 1.5;
 }
