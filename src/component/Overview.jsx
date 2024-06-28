@@ -224,7 +224,7 @@ function Overview() {
                             <MlService/>
                             <StatusQuery/>
                             <RustLang/>
-                        < /div>
+                        </div>
                     </div>
 
                 </div>
@@ -235,11 +235,10 @@ function Overview() {
 
 export default Overview
 /*
-< div
-className = "key-features" >
+< div className = "key-features" >
     < CompareIcon / >
     < AmbuiguityIcon / >
     < MemoryControl / >
-    < /div>
+< /div>
 
  */
