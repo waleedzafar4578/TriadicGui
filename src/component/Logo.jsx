@@ -2,7 +2,7 @@ import '../design/logo.css'
 function TriadicLogo({mode})
 {
     return (
-        <div className={mode == 'alternative' ? "altContainer" : "container"}>
+        <div className={mode === 'alternative' ? "altContainer" : "container"}>
             <svg width="343" height="328" viewBox="0 0 343 328" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="Triadic Logo">
                     <path id="Triadic" d="M165.755 157.055C165.653 150.021 165.653 150.019 159.131 149.964C156.005 149.937 152.66 150.669 152.913 145.454C153.08 141.995 154.145 140.785 157.603 140.859C165.926 141.037 174.255 140.909 182.582 140.914C190.112 140.918 190.737 141.795 188.594 149.711C187.225 149.791 185.757 149.929 184.286 149.953C176.895 150.071 176.896 150.06 176.889 157.702C176.882 165.03 176.675 172.364 176.933 179.683C177.107 184.636 173.888 183.727 170.958 183.876C167.788 184.037 165.532 183.844 165.715 179.528C166.026 172.214 165.771 164.877 165.755 157.055Z" fill="#0092CB"/>
@@ -94,7 +94,7 @@ function TriadicLogo({mode})
                         </g>
                 </g>
             </svg>
-{mode == 'linear' ? (<h1 className='productName'><span>TRIADIC</span><span>ENGINE</span></h1>) : null}
+{mode === 'linear' ? (<h1 className='productName'><span>TRIADIC</span><span>ENGINE</span></h1>) : null}
     </div>
     )
 }

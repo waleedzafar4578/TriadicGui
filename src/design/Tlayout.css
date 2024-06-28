@@ -20,15 +20,15 @@
 
 .dropdown-item{
     float: none;
-    padding: 0.7em , 0.5em;
-    margin: 0.3em , 0;
+    padding: 0.7em ;
+    margin: 0.3em ;
     border-radius: 0.5em;
     cursor: pointer;
 }
 .database-item{
     float: none;
-    padding: 0.7em , 0.5em;
-    margin: 0.3em , 0;
+    padding: 0.7em ;
+    margin: 0.3em ;
     border-radius: 0.5em;
     cursor: pointer;
 }
@@ -77,14 +77,16 @@
     flex-direction: row;
 }
 .logout-button{
-    background-color: #2C3333;
+    background-color: rgba(44, 51, 51, 0);
     float:right;
     color: white;
     text-align: center;
     height: auto;
-    padding: 0.6rem 1.2rem;
+    padding: 1.0rem 1.2rem;
     text-decoration: none;
     border: 0 solid transparent;
+    border-radius: 0;
+
 }
 .logout-button a:hover:not(.active) {
     background-color: #2E4F4F;

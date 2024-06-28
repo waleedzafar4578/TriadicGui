@@ -11,31 +11,75 @@
     font-style: normal;
 }
 .content_quick{
+
     max-width: 100vw;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    padding: 5px;
-    border: 1px solid rgb(30, 31, 34);
+    padding: 1px;
     border-radius: 8px;
-    background-color: rgba(14, 14, 14, 0.08);
+    text-align: center;
+}
+.content_quick h1{
+    text-align: center;
+    width: 100vw;
+    margin: 1%;
+    color: #768576;
+}
+.content_quick h2{
+    text-align: center;
+    width: 100vw;
+    margin: 1%;
+    color: rgba(208, 174, 243, 0.56);
 }
 .QS{
-    font-family: Montserrat;
+    font-family: Montserrat, serif;
     color: #0092CB;
     margin-bottom: 60px;
     font-size: 60px;
 }
 .PTL-content{
+    text-align: center;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .PTL-content p{
     width: 80vw;
-    margin: 20px;
+    margin: 10px;
+    text-align: center;
+    font-size: 17px;
+
+}
+.nm1{
+    color: #fdd635;
+    font-size: 20px;
+    font-style: italic;
+}
+.nm{
+    color: #177a25;
+    font-size: 20px;
+    font-style: italic;
+}
+.nm4{
+    color: #eac964;
+    font-size: 20px;
+    font-style: italic;
+}
+.nm2{
+    color: rgba(248, 124, 0, 0.76);
+    font-size: 30px;
+    padding: 10px;
+    font-style: italic;
+    background-color: #9fb39f;
+    border-radius: 20px;
+    margin: 10px;
 }
 .TTV{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,11 +91,9 @@
     align-items: center;
     width: 80vw;
     border-radius: 15px;
-    margin: 30px;
+    margin: 1px;
 }
-.benefits li{
-    margin: 20px;
-}
+
 .benefitList{
     display: flex;
     flex-direction: column;
@@ -65,11 +107,9 @@
     align-items: center;
     width: 80vw;
     border-radius: 15px;
-    margin: 30px;
+    margin: 1px;
 }
-.application li{
-    margin: 20px;
-}
+
 .applicationList{
     display: flex;
     flex-direction: column;
@@ -79,22 +119,14 @@
 .DQL{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 .DQL-list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30vw;
-    border-radius: 15px;
-    margin: 30px;
-    list-style-type: square;
+    border-radius: 10px;
 }
-.DQL li{
-    margin: 20px;
-}
+
 .DDL{
     display: flex;
     flex-direction: column;
@@ -104,95 +136,79 @@
 .DDL-list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: self-start;
-    width: 40vw;
     border-radius: 15px;
-    margin: 30px;
-    list-style-type: square;
+    margin: 1px;
 }
-.DDL li{
-    margin: 20px;
-}
+
 .DCL{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .DCL-list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: self-start;
-    width: 40vw;
     border-radius: 15px;
-    margin: 30px;
-    list-style-type: square;
-}
-.DCL li{
-    margin: 20px;
+
 }
 .DML{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .DML-list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: self-start;
-    width: 40vw;
     border-radius: 15px;
-    margin: 30px;
-    list-style-type: square;
-}
-.DML li{
-    margin: 20px;
+
 }
 .TCL{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
 }
 .TCL-list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: self-start;
-    width: 40vw;
     border-radius: 15px;
-    margin: 30px;
-    list-style-type: square;
+
 }
-.TCL li{
-    margin: 20px;
-}
-.Working::marker{
-    color: lightgreen;
-}
-.con1{
-    flex-direction: row;
-}
-.notWorking::marker{
-    color: red;
-}
+
 .content_quick h3{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 .Queries h3{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 15px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 1px;
 }
 .Queries p{
-    margin-left: 15px;
+    margin-left: 1px;
 }
 .Queries h2{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.Queries{
+    width: 100vw;
+    text-align: center;
+    background-color: rgba(22, 27, 22, 0.71);
+}
+.Queries h1{
+    text-align: center;
+    width: 100vw;
+    margin: 1%;
+    color: #768576;
+}
+.Queries h2{
+    text-align: center;
+    width: 100vw;
+    margin: 1%;
+    color: rgba(208, 174, 243, 0.56);
+}
+
+.Queries p{
+    width: 80vw;
+    margin: 1px;
+    text-align: center;
+    font-size: 17px;
 }

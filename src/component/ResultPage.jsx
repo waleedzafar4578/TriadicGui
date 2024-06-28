@@ -13,17 +13,19 @@ function ResultPage() {
             {/* eslint-disable-next-line react/no-unknown-property */}
             <h2 className='QS' align="center">Quick Start</h2>
             <div className="content_quick">
-                <h3 className='PTL'>Peirce’s Triadic Logic</h3>
+                <h1 className='PTL'>Peirce’s Triadic Logic</h1>
                 <div className="PTL-content">
-                <p>
-                    Peirce’s Triadic Logic is a unique logical framework developed by the American philosopher and
-                    logician Charles Sanders Peirce. Unlike classical binary logic, which operates with two truth values
-                    (TRUE and FALSE), Peirce’s logic introduces a third truth value: <strong>LIMIT</strong>. This
-                    addition allows for a more nuanced representation of uncertainty and indeterminacy in logical
-                    expressions.
-                </p>
+                    <p>
+                        Peirce’s Triadic Logic is a unique logical framework developed by the <strong> American
+                        philosopher </strong> and
+                            logician <strong className="nm1">Charles Sanders Peirce</strong>.<br/>Unlike classical binary logic, which operates with two truth
+                        values
+                        (TRUE and FALSE), Peirce’s logic introduces a third truth value: <strong>LIMIT</strong>.<br/> This
+                        addition allows for a more nuanced representation of uncertainty and indeterminacy in logical
+                        expressions.
+                    </p>
                 </div>
-                <h3>The Three Truth Values:</h3>
+                <h2>The Three Truth Values:</h2>
                 <div className="TTV">
                 <table border="1" cellPadding="10">
                     <thead>
@@ -56,8 +58,7 @@ function ResultPage() {
                 </table>
                 </div>
 
-
-                <h3>Benefits of Triadic Logic:</h3>
+                <h2>Benefits of Triadic Logic:</h2>
                 <div className="benefitList">
                 <ul className='benefits'>
                     <li>
@@ -76,7 +77,7 @@ function ResultPage() {
                 </ul>
                 </div>
 
-                <h3>Application in Your Database System:</h3>
+                <h2>Application in Your Database System:</h2>
                 <p>
                     In the context of your relational database project:
                 </p>
@@ -95,124 +96,110 @@ function ResultPage() {
                     </li>
                 </ul>
                 </div>
-                <h3>Example:</h3>
-                <p>
-                    Suppose you have a database storing sensor data, and some readings are ambiguous or incomplete.
-                    Using binary logic, you would have to either exclude these readings or inaccurately classify them as
-                    TRUE or FALSE. With triadic logic, you can assign a LIMIT value to these ambiguous readings,
-                    maintaining the integrity and completeness of your data.
-                </p>
-                <pre>
+                <div className={"PTL-content"}>
+                    <h2>Example:</h2>
+                    <p>
+                        Suppose you have a database storing sensor data, and some readings are ambiguous or incomplete.
+                        Using binary logic, you would have to either exclude these readings or inaccurately classify
+                        them as
+                        TRUE or FALSE. With triadic logic, you can assign a LIMIT value to these ambiguous readings,
+                        maintaining the integrity and completeness of your data.
+                    </p>
+                    <ShowCode code={"SELECT * FROM sensor_data WHERE status = 'LIMIT';"}/>
+                    <p>
+                        This query would retrieve all records where the sensor data is uncertain or incomplete, allowing
+                        for targeted analysis and decision-making.
+                    </p>
+                </div>
 
-               <ShowCode
-                   code={"SELECT * FROM sensor_data WHERE status = 'LIMIT';"}
-               />
-
-
-                </pre>
-                <p>
-                    This query would retrieve all records where the sensor data is uncertain or incomplete, allowing for
-                    targeted analysis and decision-making.
-                </p>
-
-                <strong>
+                <strong className="nm2">
                     In Peirce’s Triadic Logic, TRUE is abbreviated as T, FALSE as F, and LIMIT as L.
                 </strong>
             </div>
             <div className='Queries'>
-                <h2>SQL Query Categories</h2>
+                <h1>SQL Query Categories</h1>
 
-                <h3>Data Query Language (DQL)</h3>
-                <p>DQL is used to query the database and retrieve data.</p>
+                <h2>Data Query Language (DQL)</h2>
+                <h3>DQL is used to query the database and retrieve data.</h3>
                 <div className="DQL">
-                <ul className='DQL-list' style={{listStyleType: 'square', paddingLeft: '20px'}}>
-                    <li className='Working'>
-                        <strong>SELECT</strong>: Retrieves data from the database.
-                        <pre><code>SELECT * FROM table_name;</code></pre>
-                        <p>Status: <strong>Working</strong></p>
-                    </li>
+                    <ul className='DQL-list'>
+                        <li>
+                            <strong className="nm">SELECT</strong>: Retrieves data from the database.
+                        </li>
+                        <ShowCode code={"SELECT * FROM table_name;"}/>
+                        <ShowCode code={"SELECT (column_name1,column_name2) FROM table_name;"}/>
+                        <ShowCode code={"SELECT * FROM table_name WHERE column_name=(values:Degree);"}/>
                 </ul>
                 </div>
 
-                <h3>Data Definition Language (DDL)</h3>
+                <h2>Data Definition Language (DDL)</h2>
                 <p>DDL is used to define and modify database structure.</p>
                 <div className="DDL">
-                <ul className='DDL-list' style={{listStyleType: 'square', paddingLeft: '20px'}}>
-                    <li className='Working'>
-                        <strong>CREATE</strong>: Creates a new table or database.
-                        <pre><code>CREATE TABLE table_name (column1 datatype, column2 datatype);</code></pre>
-                        <p>Status: <strong>Working</strong></p>
+                <ul className='DDL-list'>
+                    <li >
+                        <strong className="nm">CREATE</strong>: Creates a new table or database.
                     </li>
-                    <li className='Working'>
-                        <strong>ALTER</strong>: Modifies an existing database object.
-                        <pre><code>ALTER TABLE table_name ADD column_name datatype;</code></pre>
-                        <p>Status: <strong>Working</strong></p>
+                    <ShowCode code={"CREATE TABLE table_name (column1 datatype, column2 datatype);"}/>
+                    <li >
+                        <strong className="nm4">ALTER</strong>: Modifies an existing database object.
+                        <ShowCode code={"ALTER TABLE table_name ADD column_name datatype;"}/>
                     </li>
-                    <li className='notWorking'>
-                        <strong>DROP</strong>: Deletes a table or database.
-                        <pre><code>DROP TABLE table_name;</code></pre>
-                        <p>Status: <strong>Not Working</strong></p>
+                    <li >
+                        <strong className="nm">DROP</strong>: Deletes a table or database.
+                        <ShowCode code={"DROP TABLE table_name;"}/>
                     </li>
                 </ul>
                 </div>
 
-                <h3>Data Control Language (DCL)</h3>
+                <h2>Data Control Language (DCL)</h2>
                 <p>DCL is used to control access to data in the database.</p>
                 <div className="DCL">
-                <ul className='DCL-list' style={{listStyleType: 'square', paddingLeft: '20px'}}>
-                    <li className='Working'>
-                        <strong>GRANT</strong>: Gives a user access privileges to the database.
-                        <pre><code>GRANT SELECT ON table_name TO user_name;</code></pre>
-                        <p>Status: <strong>Working</strong></p>
+                <ul className='DCL-list' >
+                    <li >
+                        <strong className="nm4">GRANT</strong>: Gives a user access privileges to the database.
+                        <ShowCode code={"GRANT SELECT ON table_name TO user_name;"}/>
                     </li>
-                    <li className='notWorking'>
-                        <strong>REVOKE</strong>: Removes user access privileges to the database.
-                        <pre><code>REVOKE SELECT ON table_name FROM user_name;</code></pre>
-                        <p>Status: <strong>Not Working</strong></p>
+                    <li >
+                        <strong className="nm4">REVOKE</strong>: Removes user access privileges to the database.
+                        <ShowCode code={"GRANT SELECT ON table_name TO user_name;"}/>
                     </li>
                 </ul>
                 </div>
 
-                <h3>Data Manipulation Language (DML)</h3>
+                <h2>Data Manipulation Language (DML)</h2>
                 <p>DML is used to insert, update, and delete data in the database.</p>
                 <div className="DML">
-                <ul className='DML-list' style={{listStyleType: 'square', paddingLeft: '20px'}}>
-                    <li className='Working'>
-                        <strong>INSERT</strong>: Adds new data into the database.
-                        <pre><code>INSERT INTO table_name (column1, column2) VALUES (value1, value2);</code></pre>
-                        <p>Status: <strong>Working</strong></p>
+                <ul className='DML-list'>
+                    <li >
+                        <strong className="nm">INSERT</strong>: Adds new data into the database.
+                        <ShowCode code={"INSERT INTO table_name (column1, column2) VALUES (value1:Degree, value2:Degree);"}/>
                     </li>
-                    <li className='Working'>
-                        <strong>UPDATE</strong>: Modifies existing data in the database.
-                        <pre><code>UPDATE table_name SET column1 = value1 WHERE condition;</code></pre>
-                        <p>Status: <strong>Working</strong></p>
+                    <li >
+                        <strong className="nm">UPDATE</strong>: Modifies existing data in the database.
+                        <ShowCode code={"UPDATE table_name SET column1 = value1 WHERE condition;"}/>
                     </li>
-                    <li className='notWorking'>
-                        <strong>DELETE</strong>: Removes data from the database.
-                        <pre><code>DELETE FROM table_name WHERE condition;</code></pre>
-                        <p>Status: <strong>Not Working</strong></p>
+                    <li >
+                        <strong className="nm4">DELETE</strong>: Removes data from the database.
+                        <ShowCode code={"DELETE FROM table_name WHERE condition;"}/>
                     </li>
                 </ul>
                 </div>
 
-                <h3>Transaction Control Language (TCL)</h3>
+                <h2>Transaction Control Language (TCL)</h2>
                 <p>TCL is used to manage transactions in the database.</p>
                 <div className="TCL">
-                <ul className='TCL-list' style={{ listStyle: 'square' , paddingLeft: '20px'}}>
-                    <li className='Working'>
-                        <strong>COMMIT</strong>: Saves the transaction in the database.
-                        <pre><code>COMMIT;</code></pre>
-                        <p>Status: <strong>Working</strong></p>
+                <ul className='TCL-list' >
+                    <li >
+                        <strong className="nm4">COMMIT</strong>: Saves the transaction in the database.
+                        <ShowCode code={"COMMIT;"}/>
                     </li>
-                    <li className='Working'>
-                        <strong>ROLLBACK</strong>: Reverts the transaction in the database.
-                        <pre><code>ROLLBACK;</code></pre>
-                        <p>Status: <strong>Working</strong></p>
+                    <li >
+                        <strong className="nm4">ROLLBACK</strong>: Reverts the transaction in the database.
+                        <ShowCode code={"ROLLBACK;"}/>
                     </li>
-                    <li className='notWorking'>
-                        <strong>SAVEPOINT</strong>: Sets a savepoint within a transaction.
-                        <pre><code>SAVEPOINT savepoint_name;</code></pre>
-                        <p>Status: <strong>Not Working</strong></p>
+                    <li >
+                        <strong className="nm4">SAVEPOINT</strong>: Sets a savepoint within a transaction.
+                        <ShowCode code={"SAVEPOINT savepoint_name;"}/>
                     </li>
                 </ul>
                 </div>

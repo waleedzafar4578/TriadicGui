@@ -2,14 +2,20 @@
     color: #CBE4DE;
 
 }
-ul {
+ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+
+}
+.menu_bar{
     display: flex;
     align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #2C3333;
+
 }
 li a {
     display: block;
@@ -19,7 +25,8 @@ li a {
     text-decoration: none;
 }
 li {
-    float: right;
+    float: left;
+
 }
 .menu-item a:hover:not(.active) {
     background-color: #2E4F4F;
@@ -27,4 +34,5 @@ li {
 
 .active {
     background-color: #0E8388;
+
 }

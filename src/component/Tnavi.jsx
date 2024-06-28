@@ -4,7 +4,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import EditorPage from './EditorPage.jsx';
 import ResultPage from './ResultPage.jsx';
-import HelpPage from './HelpPAge.jsx';
 import Overview from './Overview.jsx';
 import '../design/Tnavi.css';
 
@@ -18,8 +17,8 @@ const handleLogout = () => {
 const AppRouter = () => {
     return (
         <Router basename="/TriadicGui"> {/* Replace 'your-repo-name' with the actual name of your GitHub repository */}
-            <nav>
-                <ul>
+            <nav id={"menu_bar"}>
+                <ul >
                     <li className='menu-item'><Link to="/">Overview</Link></li>
                     <li className='menu-item'><Link to="/editor">Play Ground</Link></li>
                     <li className='menu-item'><Link to="/result">Quick Start</Link></li>

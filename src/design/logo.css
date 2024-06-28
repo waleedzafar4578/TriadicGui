@@ -30,18 +30,7 @@
     margin-left: -50px;
     text-align: center;
 }
-/* #Top{
-    transform-origin: center;
-    animation: rotateAnimation 10s infinite alternate ease-in-out;
-}
-#Right{
-    transform-origin: center;
-    animation: rotateAnimation 10s infinite alternate ease-in-out;
-}
-#Left{
-    transform-origin: center;
-    animation: rotateAnimation 10s infinite alternate ease-in-out;
-} */
+
 .alternative{
     transform-origin: center;
     animation: rotateAnimation 10s infinite alternate ease-in-out;
@@ -64,32 +53,39 @@
         width: 100vw;
     }
     .productName{
-        margin-left: 0px;
+        margin-left: 0;
         margin-top: -40px;
     }
 }
-h1 {
-    color: hsl(0, 0%, 28%);
+.container h1 {
+    color: #0092CB;
     font-size: 50px;
     font-weight: bold;
     font-family: monospace;
     letter-spacing: 7px;
     cursor: pointer;
 }
-
-h1 span {
+.altContainer h1 {
+    color: #0092CB;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
+    cursor: pointer;
+}
+.container h1 span {
     transition: 0.5s ease-out;
 }
-h1:hover span:nth-child(1) {
+.container h1:hover span:nth-child(1) {
     margin-right: 5px;
 }
-h1:hover span:nth-child(1):after {
+.container h1:hover span:nth-child(1):after {
     content: " SQL";
 }
-h1:hover span:nth-child(2) {
+.container h1:hover span:nth-child(2) {
     margin-left: 30px;
 }
-h1:hover span {
+.container h1:hover span {
     color: #fff;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
 }

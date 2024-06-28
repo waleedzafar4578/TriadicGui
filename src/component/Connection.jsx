@@ -119,7 +119,7 @@ function Login( {onLogin , createPageRender} ) {
             if (data.related_info ==="-1"){
                 // Assuming the server sends back a token upon successful login
                 const token = data.token;
-                alert("Welcome back");
+                alert("Welcome back to Triadic Sql Engine!");
                 // Call the onLogin callback with the token
                 onLogin(token);
             }else {

@@ -16,11 +16,11 @@ const ShowCode = ({ code }) => {
 
     return (
         <div className="code_show_main">
-            <div className="code-container">
+
                 <SyntaxHighlighter language="sql" style={tomorrow} customStyle={customStyle}>
                     {code}
                 </SyntaxHighlighter>
-            </div>
+
         </div>
     );
 };
