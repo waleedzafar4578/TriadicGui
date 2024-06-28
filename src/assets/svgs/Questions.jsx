@@ -20,7 +20,15 @@ export default function Questions(){
                 <h2>Ambiguity</h2>
             </div>
             <p className='ambContent'>
-                Triadic SQL Engine solves the problem of <strong>ambigous data</strong> in a different way. Fuzzy uses <strong>infinite values</strong> to deal with ambigous data while Binary relies on the process of <strong>normalization</strong> to eliminate ambigous data, unlike Binary and Fuzzy, Triadic use <strong>degree</strong> along with data to tackle ambigous data without removing it. 
+                Triadic SQL Engine solves the problem of
+                <strong>ambiguous data</strong>
+                in a different way. Fuzzy uses
+                <strong>infinite values</strong>
+                to deal with ambiguous data while Binary relies on the process of
+                <strong>normalization</strong>
+                to eliminate ambiguous data, unlike Binary and Fuzzy,
+                Triadic use <strong>degree</strong>
+                along with data to tackle ambiguous data without removing it.
             </p>
         </div>
     )

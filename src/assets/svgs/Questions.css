@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background-color: #353535;
+    border-radius: 5%;
+    padding: 5%;
 }
 .ambContent{
     margin-top: 10px;

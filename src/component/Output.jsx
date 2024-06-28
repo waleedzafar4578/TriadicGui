@@ -89,10 +89,9 @@ const OutputWindow = ({ status, output }) => {
             </>
 
         )}
-        {status && (
+        {status ==="Err" && (
             <>
                 <h3 style={{color: 'red'}}>{output}</h3>
-                <p style={{color: 'red'}}>{statusMessages[status]}</p>
             </>
     )
 }

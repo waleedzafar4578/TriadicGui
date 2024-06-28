@@ -40,10 +40,14 @@ export default function AmbuiguityIcon(){
                         </clipPath>
                     </defs>
                 </svg>
-                <h2>Ambiguity</h2>
+                <h2>Enhanced Security</h2>
             </div>
             <p className='ambContent'>
-                Triadic SQL Engine solves the problem of <strong>ambigous data</strong> in a different way. Fuzzy uses <strong>a spectrum of infinite values</strong> to deal with ambigous data while Binary relies on the process of <strong>normalization</strong> to eliminate ambigous data, unlike Binary and Fuzzy, Triadic use <strong>degree</strong> along with data to tackle ambigous data. 
+                It provide advanced security features,
+                ensuring data <strong>integrity</strong> and confidentiality.
+                The unique true, false, or limit status for each cell enhances access control granularity,
+                preventing unauthorized access and tampering. Role-based access control and cryptographic
+                techniques further protect sensitive information, bolstering overall system security.
             </p>
         </div>
     )

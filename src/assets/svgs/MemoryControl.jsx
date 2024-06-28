@@ -30,10 +30,10 @@ export function MemoryControl(){
                         </g>
                     </g>
                 </svg>
-                <h2>Data Control</h2>
+                <h2>Web-Based Edition</h2>
             </div>
             <p className='memContent'>
-                Binary works with only true values and Fuzzy has infinite values which is impossible to implement, Triadic works with <strong>3</strong> different degrees <strong>(T, L, F)</strong>. By using these degrees the user gets more control over data and can deal with <strong>undetermined data</strong> and <strong>manuplate data</strong> on a whole new level.
+                Our web-based interface simplifies database management, offering real-time collaboration and secure access from any location. It ensures efficient data input, modification, and retrieval, integrating seamlessly with other web services for enhanced usability and productivity.
             </p>
         </div>
     )

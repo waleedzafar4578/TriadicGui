@@ -1,10 +1,10 @@
 /* src/styles.css */
 .code_show_main {
-    margin: 15px auto;
-    max-width: 800px;
+    margin: 35px auto;
+    max-width: 100vw;
     flex-direction: column;
     padding: 5px;
-    border: 1px solid rgba(14, 14, 14, 0.08);
+    border: 1px solid rgb(30, 31, 34);
     border-radius: 8px;
     background-color: rgba(14, 14, 14, 0.08);
 }
@@ -34,6 +34,7 @@
 .code-container pre {
     padding: 15px;
     border-radius: 8px;
+    border: 1px solid rgba(134, 67, 67, 0.29);
     background-color: #282c34;
     color: #ffffff;
     overflow-x: auto;

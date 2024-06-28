@@ -1,5 +1,5 @@
-const serverAddress="https://triadicsqldb.onrender.com";
-//const serverAddress="http://127.0.0.1:4000";
+//const serverAddress="https://triadicsqldb.onrender.com";
+const serverAddress="http://127.0.0.1:4000";
 const config = {
     login_api: serverAddress+"/ln",
     create_account_api: serverAddress+"/ca",

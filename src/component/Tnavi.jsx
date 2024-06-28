@@ -23,9 +23,8 @@ const AppRouter = () => {
                     <li className='menu-item'><Link to="/">Overview</Link></li>
                     <li className='menu-item'><Link to="/editor">Play Ground</Link></li>
                     <li className='menu-item'><Link to="/result">Quick Start</Link></li>
-                    <li className='menu-item'><Link to="/help">Help</Link></li>
                     <li className='menu-item logout'>
-                        <button onClick={handleLogout} className='logout-button'>LogOut</button>
+                        <button onClick={handleLogout} className='logout-button'>Logout</button>
                     </li>
                 </ul>
             </nav>
@@ -33,7 +32,6 @@ const AppRouter = () => {
                 <Route path="/" element={<Overview />} />
                 <Route path="/editor" element={<EditorPage />} />
                 <Route path="/result" element={<ResultPage />} />
-                <Route path="/help" element={<HelpPage />} />
             </Routes>
         </Router>
     );
