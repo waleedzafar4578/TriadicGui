@@ -9,7 +9,8 @@ import MovingComponent from 'react-moving-text'
 import MlService from "../assets/svgs/MlService.jsx";
 import StatusQuery from "../assets/svgs/StatusQuery.jsx";
 import RustLang from "../assets/svgs/RustLang.jsx";
-
+import { ReactTabulator } from 'react-tabulator';
+import Tdata from '../assets/exampleTables.js';
 // import { useState , useEffect , useRef} from 'react'
 function Overview() {
     const [scrollY, setScrollY] = useState(0);
@@ -226,7 +227,38 @@ function Overview() {
                             <RustLang/>
                         </div>
                     </div>
-
+                    <div className="example">
+                    <div className='exampleContainer'>
+                        <h2 className='exampleHeading'>Example</h2>
+                        <p className='exampleParagraph'>
+                        The following is an example of ambiguous data in primary key which can be resolved by using values with degree in primary key and automate normalization:
+                        </p>
+                        <div className='exampleTable'>
+                            <ReactTabulator data={Tdata.Example.data} columns={Tdata.Example.columns} layout={"fitColumns"}/>
+                        </div>
+                        <p className='exampleParagraph'>In the above example, the primary key is made with T degree and the ambiguous values have the degree of L. The Degree of L represents that you have doubts about the values for now, but in the future you will make either of the values true. Now the Triadic SQL Engine knows that these two values are ambiguous, hence it will display them with L degree.</p>
+                        <div className='exampleTableChoice'>
+                            <div className='exampleChoice1'>
+                                <ReactTabulator data={Tdata.ExampleChoice1.data} columns={Tdata.ExampleChoice1.columns} layout={"fitColumns"}/>
+                            </div>
+                            <div className='exampleChoice2'>
+                                <ReactTabulator data={Tdata.ExampleChoice2.data} columns={Tdata.ExampleChoice2.columns} layout={"fitColumns"}/>
+                            </div>
+                        </div>
+                        <p className='exampleParagraph'>If the primary key in a table is made with degree T then Triadic SQL Engine will not allow you to enter duplicate or ambiguous data in the primary key with degree T same goes for primary keys with L and F degrees. But you can enter ambiguous data with any other degree that is not matching with the degree of primary key.</p>
+                        <div className='threeTables'>
+                            <div className='RightTable1'>
+                                <ReactTabulator data={Tdata.RightTable1.data} columns={Tdata.RightTable1.columns} layout={"fitColumns"}/>
+                            </div>
+                            <div className='RightTable2'>
+                                <ReactTabulator data={Tdata.RightTable2.data} columns={Tdata.RightTable2.columns} layout={"fitColumns"}/>
+                            </div>
+                            <div className='WrongTable'>
+                                <ReactTabulator data={Tdata.WrongTable.data} columns={Tdata.WrongTable.columns} layout={"fitColumns"}/>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>

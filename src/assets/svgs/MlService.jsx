@@ -1,4 +1,4 @@
-import './Ambuiguity.css'
+import './MI.css'
 export default function MlService(){
     return(
         <div className="miContainer">
