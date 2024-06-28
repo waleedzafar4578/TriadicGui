@@ -1,0 +1,49 @@
+.miContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #353535;
+    border-radius: 5%;
+    padding: 5%;
+}
+.mi svg{
+    margin-left: 30px;
+}
+.ambContent{
+    margin-top: 0;
+}
+.mi{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.mi h2{
+}
+#Head{
+    transform-origin:center ;
+    animation: headAnimation 1s alternate infinite ease-in-out;
+}
+#Exclamation{
+    animation: exlamationAnimation 1s alternate infinite ease-in-out;
+}
+#Question{
+    animation: exlamationAnimation 1s alternate infinite ease-in-out;
+}
+@keyframes headAnimation {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(10deg);
+    }
+}
+@keyframes exlamationAnimation {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(10px);;
+    }
+}
