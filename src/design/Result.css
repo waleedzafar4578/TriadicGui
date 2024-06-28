@@ -1,7 +1,11 @@
-.pop{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px;
-    background-color: #e7e7fa;
+.content_quick{
+    max-width: 100vw;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid rgb(30, 31, 34);
+    border-radius: 8px;
+    background-color: rgba(14, 14, 14, 0.08);
+}
+.con1{
+    flex-direction: row;
 }

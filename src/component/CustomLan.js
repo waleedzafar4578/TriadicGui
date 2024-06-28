@@ -38,7 +38,7 @@ const customLanguage = {
             [/\bTEXT\b/, 'keyword'],
             [/\bUNIQUE\b/, 'keyword'],
             [/[;,]/, 'delimiter'],
-            [/#/, 'comment'],
+            [/#.*/, 'comment'],
             [/[+\-*/%=<>!?&|]/, 'operator'],
             [/[()\\[\]{}]/, 'delimiter.parenthesis'],
             [/\b\w+\b/, 'identifier'], // Tokenize identifiers (words)

@@ -23,7 +23,7 @@ const AppRouter = () => {
                     <li className='menu-item'><Link to="/">Overview</Link></li>
                     <li className='menu-item'><Link to="/editor">Play Ground</Link></li>
                     <li className='menu-item'><Link to="/result">Quick Start</Link></li>
-                    <li className='menu-item logout'>
+                    <li className='menu-item-logout'>
                         <button onClick={handleLogout} className='logout-button'>Logout</button>
                     </li>
                 </ul>

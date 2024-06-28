@@ -5,7 +5,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-const ShowCode = ({ title, intro, command, description, examples }) => {
+const ShowCode = ({ code }) => {
     const customStyle = {
         padding: '15px',
         borderRadius: '8px',
@@ -16,23 +16,11 @@ const ShowCode = ({ title, intro, command, description, examples }) => {
 
     return (
         <div className="code_show_main">
-            <h3>{title}</h3>
-            <h6>{intro}</h6>
             <div className="code-container">
                 <SyntaxHighlighter language="sql" style={tomorrow} customStyle={customStyle}>
-                    {command}
+                    {code}
                 </SyntaxHighlighter>
             </div>
-            <p>{description}</p>
-            {examples.map((example, index) => (
-                <div key={index} className="code-container">
-                    <SyntaxHighlighter language="sql" style={tomorrow} customStyle={customStyle}>
-                        {example.code}
-                    </SyntaxHighlighter>
-                    <p>{example.explain}</p>
-                </div>
-            ))}
-
         </div>
     );
 };

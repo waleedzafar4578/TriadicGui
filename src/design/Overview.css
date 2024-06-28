@@ -74,7 +74,7 @@
 } */
  #introduction{
     border-radius: 15px;
-    width: 96%;
+     max-width: 100vw;
     height: 96%;
     background-image: linear-gradient(to bottom right , rgb(15, 76, 129), #00C6BB , #1C857E , rgb(116, 250, 200));
     display: flex;
