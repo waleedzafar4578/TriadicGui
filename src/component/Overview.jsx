@@ -271,10 +271,10 @@ function Overview() {
                             </tr>
 
                         </table>
-                        <h2>In Boolean database if we need insert data first resolve this duplication
+                        <h5>In Boolean database if we need insert data first resolve this duplication
                             because here if we set cnic is primary then must resolve this then enter in system but in
-                            Triadic Logic we can insert in database and then you resolve in database any time.</h2>
-                        <h1>Insert data into Triadic Table</h1>
+                            Triadic Logic we can insert in database and then you resolve in database any time.</h5>
+                        <h4>Insert data into Triadic Table</h4>
                         <table>
                             <tr>
                                 <th>Cnic pk(T)</th>
@@ -325,7 +325,7 @@ function Overview() {
                                 <td>38 :T</td>
                             </tr>
                         </table>
-                        <h2>When find example#5 cnic then you can change,before this we able to see using cnic limit.</h2>
+                        <h5>When find example#5 cnic then you can change,before this we able to see using cnic limit.</h5>
                     </div>
                 </div>
             </div>

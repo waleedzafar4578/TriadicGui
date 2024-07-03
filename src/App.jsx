@@ -91,18 +91,18 @@ function App() {
     };
 
   return (
-          //<>
-          //     {isLoggedIn ? (
-          //         <>
-          //             <Theader />
-          //             <AppRouter onLogout={handleLogout} />
+          <>
+               {isLoggedIn ? (
+                   <>
+                       <Theader />
+                       <AppRouter onLogout={handleLogout} />
 
-          //         </>
-          //     ) : (
-          //         <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
-          //     )}
-          // </>
-    <AppRouter/>
+                   </>
+               ) : (
+                   <Connection onLogin={handleLogin} toggleRender = {isCreatingAccount} toggleFunction = {handleCreatingAccount}/>
+               )}
+           </>
+    //<AppRouter/>
     // <EditorPage/>
   )
 }
