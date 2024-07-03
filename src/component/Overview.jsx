@@ -5,7 +5,6 @@ import {interpolateColor, hexToRgb, rgbToHex} from '../utils.js';
 import CompareIcon from '../assets/svgs/CompareIcon.jsx';
 import AmbuiguityIcon from '../assets/svgs/Ambuiguity.jsx';
 import {MemoryControl} from '../assets/svgs/MemoryControl.jsx';
-import MovingComponent from 'react-moving-text'
 import MlService from "../assets/svgs/MlService.jsx";
 import StatusQuery from "../assets/svgs/StatusQuery.jsx";
 import RustLang from "../assets/svgs/RustLang.jsx";
@@ -206,7 +205,7 @@ function Overview() {
                         <h2 id={"handing_1"}>SIGNIFICANT FEATURE PROSPECTIVE</h2>
 
 
-                        <div className = "key-features" >
+                        <div className="key-features">
                             <CompareIcon/>
                             <AmbuiguityIcon/>
                             <MemoryControl/>
@@ -214,6 +213,119 @@ function Overview() {
                             <StatusQuery/>
                             <RustLang/>
                         </div>
+                    </div>
+                    <div className="nom_example1">
+                        <h1>How Automated The Normalization?</h1>
+
+                    </div>
+                    <div className="nom_example">
+                        <h3>Her assume this data in physical register.</h3>
+                        <table>
+                            <tr>
+                                <th>Cnic</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>#001</td>
+                                <td>example#1</td>
+                                <td>+92 123</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>#002</td>
+                                <td>example#2</td>
+                                <td>+92 123</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>#003</td>
+                                <td>example#3</td>
+                                <td>+92 123</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>#004</td>
+                                <td>example#4</td>
+                                <td>+92 123</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>#004</td>
+                                <td>example#5</td>
+                                <td>+92 123</td>
+                                <td>48</td>
+                            </tr>
+                            <tr>
+                                <td>#005</td>
+                                <td>example#6</td>
+                                <td>+92 123</td>
+                                <td>38</td>
+                            </tr>
+                            <tr>
+                                <td>#006</td>
+                                <td>example#7</td>
+                                <td>+92 123</td>
+                                <td>48</td>
+                            </tr>
+
+                        </table>
+                        <h2>In Boolean database if we need insert data first resolve this duplication
+                            because here if we set cnic is primary then must resolve this then enter in system but in
+                            Triadic Logic we can insert in database and then you resolve in database any time.</h2>
+                        <h1>Insert data into Triadic Table</h1>
+                        <table>
+                            <tr>
+                                <th>Cnic pk(T)</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Age</th>
+                            </tr>
+                            <tr>
+                                <td>#001 :T</td>
+                                <td>example#1 :T</td>
+                                <td>+92 123 :T</td>
+                                <td>14 :T</td>
+                            </tr>
+                            <tr>
+                                <td>#002 :T</td>
+                                <td>example#2 :T</td>
+                                <td>+92 123 :T</td>
+                                <td>12 :T</td>
+                            </tr>
+                            <tr>
+                                <td>#003 :T</td>
+                                <td>example#3 :T</td>
+                                <td>+92 123 :T</td>
+                                <td>18 :T</td>
+                            </tr>
+                            <tr>
+                                <td>#004 :T</td>
+                                <td>example#4 :T</td>
+                                <td>+92 123 :T</td>
+                                <td>28 :T</td>
+                            </tr>
+                            <tr>
+                                <td>#004 :L</td>
+                                <td>example#5 :T</td>
+                                <td>+92 123 :T</td>
+                                <td>48 :T</td>
+                            </tr>
+                            <tr>
+                                <td>#005 :T</td>
+                                <td>example#6 :T</td>
+                                <td>+92 123 :T</td>
+                                <td>38 :T</td>
+                            </tr>
+                            <tr>
+                                <td>#006 :T</td>
+                                <td>example#7 :T</td>
+                                <td>+92 123 :T</td>
+                                <td>38 :T</td>
+                            </tr>
+                        </table>
+                        <h2>When find example#5 cnic then you can change,before this we able to see using cnic limit.</h2>
                     </div>
                 </div>
             </div>

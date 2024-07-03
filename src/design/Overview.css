@@ -150,6 +150,21 @@
     width: 97%;
     height: 150vh;
     background-color: #242424;
+}
+
+
+.nom_example1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    margin-top: 20px;
+    width: 98.6vw;
+    height: 90vh;
+    background-color: #353535;
 
 }
 .card {
