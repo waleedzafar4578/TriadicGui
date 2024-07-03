@@ -11,26 +11,38 @@
     font-style: normal;
 }
 .content_quick{
-
     max-width: 100vw;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
     flex-direction: column;
     padding: 1px;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    margin-left: 3%;
+    margin-right: 3%;
+
 }
 .content_quick h1{
     text-align: center;
     width: 100vw;
     margin: 1%;
+    font-size: 60px;
     color: #768576;
+
 }
+.content_quick p{
+    display: block;
+    max-width: 100vw;
+    font-size: 30px;
+    margin: 1%;
+}
+
 .content_quick h2{
-    text-align: center;
+    text-align: left;
+    font-size: xxx-large;
     width: 100vw;
     margin: 1%;
-    color: rgba(208, 174, 243, 0.56);
+    color: rgb(14, 131, 136);
 }
 .QS{
     font-family: Montserrat, serif;
@@ -38,177 +50,95 @@
     margin-bottom: 60px;
     font-size: 60px;
 }
-.PTL-content{
-    text-align: center;
+
+.content_quick h3{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+/* Style for the unordered list */
+.content_quick ul {
+    list-style-type: disc; /* Use disc bullets */
+    padding-left: 20px; /* Indent the list */
+    margin: 10px 0; /* Add vertical spacing */
+    display: flex; /* Ensure the list displays as a block */
     flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
 }
-.PTL-content p{
-    width: 80vw;
-    margin: 10px;
-    text-align: center;
-    font-size: 17px;
-
+/* Style for the list items */
+.content_quick li
+{
+    margin: 2%;
+    padding: 5px; /* Add padding for better readability */
+    font-size: 30px; /* Set the font size */
+    line-height: 1.5; /* Set the line height */
+    color: #ffffff; /* Set the text color */
+    flex-direction: column /* Ensure the list item displays correctly */
 }
+
+
+/* Style for the list items with specific classes for customization */
+.content_quick li.important {
+    font-weight: bold; /* Make the text bold */
+    color: #e74c3c; /* Set a different text color */
+}
+
+.content_quick li.highlight {
+    background-color: #f9f9f9; /* Highlight the background */
+    border-left: 5px solid #3498db; /* Add a left border */
+    padding-left: 15px; /* Add padding to the left */
+}
+
 .nm1{
     color: #fdd635;
-    font-size: 20px;
+    font-size: 45px;
     font-style: italic;
+}
+.Inm{
+
+    font-size: 45px;
+    font-style: italic;
+    margin: 2%;
 }
 .nm{
     color: #177a25;
-    font-size: 20px;
+    font-size: 45px;
     font-style: italic;
+
+}
+.Innm{
+
+    color: rgba(155, 204, 38, 0.72);
+    font-size: 45px;
+    font-style: italic;
+    text-decoration: underline;
 }
 .nm4{
     color: #eac964;
-    font-size: 20px;
+    font-size: 45px;
     font-style: italic;
 }
 .nm2{
     color: rgba(248, 124, 0, 0.76);
-    font-size: 30px;
+    font-size: 45px;
     padding: 10px;
     font-style: italic;
     background-color: #9fb39f;
     border-radius: 20px;
     margin: 10px;
 }
-.TTV{
-    margin-top: 1px;
-    margin-bottom: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.benefits{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    border-radius: 15px;
-    margin: 1px;
+table {
+    margin: 2%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.benefitList{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.application{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    border-radius: 15px;
-    margin: 1px;
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 25px;
+    border-bottom: 1px solid #c6f3f3;
 }
 
-.applicationList{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.DQL{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.DQL-list{
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-}
-
-.DDL{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.DDL-list{
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    margin: 1px;
-}
-
-.DCL{
-    display: flex;
-    flex-direction: column;
-}
-.DCL-list{
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-
-}
-.DML{
-    display: flex;
-    flex-direction: column;
-}
-.DML-list{
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-
-}
-.TCL{
-    display: flex;
-    flex-direction: column;
-
-}
-.TCL-list{
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-
-}
-
-.content_quick h3{
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-.Queries h3{
-    margin-top: 1px;
-    margin-bottom: 1px;
-    margin-left: 1px;
-}
-.Queries p{
-    margin-left: 1px;
-}
-.Queries h2{
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-.Queries{
-    width: 100vw;
-    text-align: center;
-    background-color: rgba(22, 27, 22, 0.71);
-}
-.Queries h1{
-    text-align: center;
-    width: 100vw;
-    margin: 1%;
-    color: #768576;
-}
-.Queries h2{
-    text-align: center;
-    width: 100vw;
-    margin: 1%;
-    color: rgba(208, 174, 243, 0.56);
-}
-
-.Queries p{
-    width: 80vw;
-    margin: 1px;
-    text-align: center;
-    font-size: 17px;
+tr:hover {
+    background-color: rgba(159, 179, 159, 0.46);
 }

@@ -199,23 +199,12 @@ function Overview() {
                             </p>
 
                         </div>
-
                     </div>
 
                     <div className="nom_example">
-                        <MovingComponent
-                            type="unfold"
-                            duration="7900ms"
-                            delay="30s"
-                            direction="alternate-reverse"
-                            timing="ease-in-out"
-                            iteration="infinite"
-                            fillMode="forwards"
-                        >
-                            <h2 id={"handing_1"}>
-                                SIGNIFICANT FEATURE PROSPECTIVE
-                            </h2>
-                        </MovingComponent>
+
+                        <h2 id={"handing_1"}>SIGNIFICANT FEATURE PROSPECTIVE</h2>
+
 
                         <div className = "key-features" >
                             <CompareIcon/>

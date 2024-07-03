@@ -35,6 +35,7 @@ const customLanguage = {
             [/\bCHAR\b/, 'keyword'],
             [/\bFLOAT\b/, 'keyword'],
             [/\bSTRING\b/, 'keyword'],
+            [/\bBOOLEAN\b/, 'keyword'],
             [/\bTEXT\b/, 'keyword'],
             [/\bUNIQUE\b/, 'keyword'],
             [/[;,]/, 'delimiter'],

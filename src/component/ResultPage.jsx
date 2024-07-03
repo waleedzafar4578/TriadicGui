@@ -13,21 +13,20 @@ function ResultPage() {
             {/* eslint-disable-next-line react/no-unknown-property */}
             <h2 className='QS' align="center">Quick Start</h2>
             <div className="content_quick">
-                <h1 className='PTL'>Peirce’s Triadic Logic</h1>
-                <div className="PTL-content">
-                    <p>
-                        Peirce’s Triadic Logic is a unique logical framework developed by the <strong> American
-                        philosopher </strong> and
-                            logician <strong className="nm1">Charles Sanders Peirce</strong>.<br/>Unlike classical binary logic, which operates with two truth
-                        values
-                        (TRUE and FALSE), Peirce’s logic introduces a third truth value: <strong>LIMIT</strong>.<br/> This
-                        addition allows for a more nuanced representation of uncertainty and indeterminacy in logical
-                        expressions.
-                    </p>
-                </div>
+                <h1>Peirce’s Triadic Logic</h1>
+                <p>
+                    Peirce’s Triadic Logic is a unique logical framework developed by the <strong> American
+                    philosopher </strong> and
+                    logician <strong className="nm1">Charles Sanders Peirce</strong>.Unlike classical binary logic,
+                    which operates with two truth
+                    values
+                    (TRUE and FALSE), Peirce’s logic introduces a third truth value: <strong>LIMIT</strong>.This
+                    addition allows for a more nuanced representation of uncertainty and indeterminacy in logical
+                    expressions.
+                </p>
+
                 <h2>The Three Truth Values:</h2>
-                <div className="TTV">
-                <table border="1" cellPadding="10">
+                <table>
                     <thead>
                     <tr>
                         <th>Value</th>
@@ -56,153 +55,338 @@ function ResultPage() {
                     </tr>
                     </tbody>
                 </table>
-                </div>
+
 
                 <h2>Benefits of Triadic Logic:</h2>
-                <div className="benefitList">
-                <ul className='benefits'>
-                    <li>
-                        <strong>Handling Uncertainty</strong>: Triadic logic is particularly useful in scenarios where
-                        binary logic falls short, such as in databases dealing with incomplete or ambiguous data. The
-                        LIMIT value allows for a more flexible and accurate representation of such data.
-                    </li>
-                    <li>
-                        <strong>Improved Data Analysis</strong>: By incorporating a third truth value, data analysis can
-                        be more nuanced, accommodating degrees of truth and improving decision-making processes.
-                    </li>
-                    <li>
-                        <strong>Enhanced Expressiveness</strong>: Triadic logic expands the expressiveness of logical
-                        statements, allowing for a richer and more detailed representation of real-world phenomena.
-                    </li>
-                </ul>
-                </div>
+
+                <li>
+                    <strong>Handling Uncertainty</strong>: Triadic logic is particularly useful in scenarios where
+                    binary logic falls short, such as in databases dealing with incomplete or ambiguous data. The
+                    LIMIT value allows for a more flexible and accurate representation of such data.
+                </li>
+                <li>
+                    <strong>Improved Data Analysis</strong>: By incorporating a third truth value, data analysis can
+                    be more nuanced, accommodating degrees of truth and improving decision-making processes.
+                </li>
+                <li>
+                    <strong>Enhanced Expressiveness</strong>: Triadic logic expands the expressiveness of logical
+                    statements, allowing for a richer and more detailed representation of real-world phenomena.
+                </li>
+
 
                 <h2>Application in Your Database System:</h2>
                 <p>
                     In the context of your relational database project:
                 </p>
-                <div className="applicationList">
-                <ul className='application'>
-                    <li>
-                        <strong>Data Storage</strong>: Each cell in your database can have one of the three statuses:
-                        TRUE, FALSE, or LIMIT. This enables a more sophisticated and accurate representation of the
-                        stored data.
-                    </li>
-                    <li>
-                        <strong>Queries and Operations</strong>: Users can perform queries and operations that take into
-                        account the third truth value, allowing for more complex and meaningful data interactions.
-                        Custom operators can be defined to handle the LIMIT value effectively, providing users with
-                        powerful tools for data manipulation and analysis.
-                    </li>
-                </ul>
-                </div>
-                <div className={"PTL-content"}>
-                    <h2>Example:</h2>
-                    <p>
-                        Suppose you have a database storing sensor data, and some readings are ambiguous or incomplete.
-                        Using binary logic, you would have to either exclude these readings or inaccurately classify
-                        them as
-                        TRUE or FALSE. With triadic logic, you can assign a LIMIT value to these ambiguous readings,
-                        maintaining the integrity and completeness of your data.
-                    </p>
-                    <ShowCode code={"SELECT * FROM sensor_data WHERE status = 'LIMIT';"}/>
-                    <p>
-                        This query would retrieve all records where the sensor data is uncertain or incomplete, allowing
-                        for targeted analysis and decision-making.
-                    </p>
-                </div>
+
+
+                <li>
+                    <strong>Data Storage</strong>: Each cell in your database can have one of the three statuses:
+                    TRUE, FALSE, or LIMIT. This enables a more sophisticated and accurate representation of the
+                    stored data.
+                </li>
+                <li>
+                    <strong>Queries and Operations</strong>: Users can perform queries and operations that take into
+                    account the third truth value, allowing for more complex and meaningful data interactions.
+                    Custom operators can be defined to handle the LIMIT value effectively, providing users with
+                    powerful tools for data manipulation and analysis.
+                </li>
+
+
+                <h2>Example:</h2>
+                <p>
+                    Suppose you have a database storing sensor data, and some readings are ambiguous or incomplete.
+                    Using binary logic, you would have to either exclude these readings or inaccurately classify
+                    them as
+                    TRUE or FALSE. With triadic logic, you can assign a LIMIT value to these ambiguous readings,
+                    maintaining the integrity and completeness of your data.
+                </p>
+                <ShowCode code={"SELECT * FROM sensor_data WHERE status = 'LIMIT';"}/>
+                <p>
+                    This query would retrieve all records where the sensor data is uncertain or incomplete, allowing
+                    for targeted analysis and decision-making.
+                </p>
 
                 <strong className="nm2">
                     In Peirce’s Triadic Logic, TRUE is abbreviated as T, FALSE as F, and LIMIT as L.
                 </strong>
-            </div>
-            <div className='Queries'>
+
                 <h1>SQL Query Categories</h1>
 
-                <h2>Data Query Language (DQL)</h2>
-                <h3>DQL is used to query the database and retrieve data.</h3>
-                <div className="DQL">
-                    <ul className='DQL-list'>
-                        <li>
-                            <strong className="nm">SELECT</strong>: Retrieves data from the database.
-                        </li>
-                        <ShowCode code={"SELECT * FROM table_name;"}/>
-                        <ShowCode code={"SELECT (column_name1,column_name2) FROM table_name;"}/>
-                        <ShowCode code={"SELECT * FROM table_name WHERE column_name=(values:Degree);"}/>
-                </ul>
-                </div>
-
                 <h2>Data Definition Language (DDL)</h2>
-                <p>DDL is used to define and modify database structure.</p>
-                <div className="DDL">
-                <ul className='DDL-list'>
-                    <li >
-                        <strong className="nm">CREATE</strong>: Creates a new table or database.
-                    </li>
-                    <ShowCode code={"CREATE TABLE table_name (column1 datatype, column2 datatype);"}/>
-                    <li >
-                        <strong className="nm4">ALTER</strong>: Modifies an existing database object.
-                        <ShowCode code={"ALTER TABLE table_name ADD column_name datatype;"}/>
-                    </li>
-                    <li >
-                        <strong className="nm">DROP</strong>: Deletes a table or database.
-                        <ShowCode code={"DROP TABLE table_name;"}/>
-                    </li>
-                </ul>
-                </div>
+                <p>Data Definition Language (DDL) is a subset of SQL (Structured Query Language) used to define and
+                    manage all the structures in a database. It deals with the creation, alteration,
+                    and deletion of database objects such as tables, indexes, and schemas.
+                    DDL commands are crucial for setting up and maintaining the database schema.</p>
 
-                <h2>Data Control Language (DCL)</h2>
-                <p>DCL is used to control access to data in the database.</p>
-                <div className="DCL">
-                <ul className='DCL-list' >
-                    <li >
-                        <strong className="nm4">GRANT</strong>: Gives a user access privileges to the database.
-                        <ShowCode code={"GRANT SELECT ON table_name TO user_name;"}/>
-                    </li>
-                    <li >
-                        <strong className="nm4">REVOKE</strong>: Removes user access privileges to the database.
-                        <ShowCode code={"GRANT SELECT ON table_name TO user_name;"}/>
-                    </li>
-                </ul>
-                </div>
+
+                <li>
+                    <strong className="nm">CREATE</strong>
+                    <p>The CREATE keyword in SQL is used to create new database objects such as tables, views, indexes,
+                        and databases.
+                        It is a part of the Data Definition Language (DDL), which deals with the structure of the
+                        database.</p>
+                    <div className="Inm">
+                        <strong className="Innm">DATABASE</strong>
+                        <p>CREATE DATABASE: Used to create a new database.</p>
+                        <ShowCode code={"CREATE DATABASE _db_name"}/>
+                    </div>
+                    <div className="Inm">
+                        <strong className="Innm">TABLE</strong>
+                        <p>CREATE TABLE: Used to create a new table within a database.</p>
+                        <ShowCode code={"CREATE TABLE _tb_name (  _column_name DATATYPE CONSTRAINT );"}/>
+                        <div className={"In_datatype"}>
+                            <h2>Suppoerted Datatypes</h2>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Data Types</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><strong>BOOL</strong></td>
+                                    <td>A boolean data type can hold one of two values: TRUE or FALSE.
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    is_active BOOL\n" +
+                                            ");\n" +
+                                            "\n" +
+                                            "INSERT INTO example (is_active) VALUES (TRUE :T), (FALSE :T);"}/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>INT</strong></td>
+                                    <td>An integer data type is used to store whole numbers (both positive and negative)
+                                        without any decimal points.
+                                        Commonly used integer types include INT, SMALLINT, and BIGINT, differing mainly
+                                        by the range of values they can store.
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    age INT\n" +
+                                            ");\n" +
+                                            "\n" +
+                                            "INSERT INTO example (age) VALUES (25 :F), (30 :L);"}/>
+                                        INT is typically used for fields that require numerical data without fractions,
+                                        such as counts, ages, and ID.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FLOAT</strong></td>
+                                    <td>A floating-point number is a number that has a decimal point.
+                                        It can represent fractional values as well as very large or very small numbers.
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    price FLOAT\n" +
+                                            ");\n" +
+                                            "\n" +
+                                            "INSERT INTO example (price) VALUES (19.99 :L), (100.50 :L);"}/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>STRING / TEXT</strong></td>
+                                    <td>A variable-length character data type.
+                                        Typically implemented as VARCHAR or TEXT in SQL.<br/>
+                                        With String:
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    STRING\n" +
+                                            ");\n" +
+                                            "\n" +
+                                            "INSERT INTO example (description) VALUES\n" +
+                                            " ('A short text' :L), ('A longer description that can vary in length':T);\n"}/>
+                                        With Text:
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    TEXT\n" +
+                                            ");\n" +
+                                            "\n" +
+                                            "INSERT INTO example (description) VALUES\n" +
+                                            " ('A short text' :L), ('A longer description that can vary in length':T);\n"}/>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <h2>Suppoerted Constrains</h2>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Constrain Name</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><strong>PRIMARY KEY</strong></td>
+                                    <td>A combination of NOT NULL and UNIQUE.
+                                        Uniquely identifies each row in a table.
+                                        Each table can have only one primary key, which can consist of one or more
+                                        columns.
+                                        <h3><br/>It work like old sql:</h3>
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    id INT PRIMARY KEY,\n" +
+                                            "    gender CHAR\n" +
+                                            ");"}/>
+
+                                        <ShowCode
+                                            code={"INSERT INTO example (id,gender)\n" +
+                                                "VALUES\n" +
+                                                "(1:T , M :T),\n" +
+                                                "(2:T , M :L),\n" +
+                                                "(3:T , M :L),\n"}/>
+                                        <h3><br/><br/>Primary key with <strong>T</strong> Degree/Status:</h3>
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    id INT PRIMARY KEY(T),\n" +
+                                            "    gender CHAR\n" +
+                                            ");"}/>
+                                        Here primary key with T means,it only check values must be unique which have
+                                        degree T.
+                                        <br/>
+                                        <h5>Example:</h5>
+                                        <ShowCode
+                                            code={"INSERT INTO example (id,gender)\n" +
+                                                "VALUES\n" +
+                                                "(1:T , M :T),\n" +
+                                                "(2:T , M :L),\n" +
+                                                "(3:T , M :L),\n" +
+                                                "(3:L , M :T),\n" +
+                                                "(4:F , M :T),\n" +
+                                                "(4:T , F :T),\n"}/>
+                                        <br/>
+                                        <h3><br/><br/>Primary key with <strong>F</strong> Degree/Status:</h3>
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    id INT PRIMARY KEY(F),\n" +
+                                            "    gender CHAR\n" +
+                                            ");"}/>
+                                        Here primary key with T means,it only check values must be unique which have
+                                        degree T.
+                                        <h3><br/><br/>Primary key with <strong>L</strong> Degree/Status:</h3>
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    id INT PRIMARY KEY(L),\n" +
+                                            "    gender CHAR\n" +
+                                            ");"}/>
+                                        Here primary key with T means,it only check values must be unique which have
+                                        degree T.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>UNIQUE</strong></td>
+                                    <td>Ensures that all values in a column (or a set of columns) are unique.
+                                        No two rows can have the same value in the specified column(s).
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    cnic INT UNIQUE\n" +
+                                            ");"}/>
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    cnic INT UNIQUE(T)\n" +
+                                            ");"}/>
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    cnic INT UNIQUE(F)\n" +
+                                            ");"}/>
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    cnic INT UNIQUE(L)\n" +
+                                            ");"}/>
+                                        INT is typically used for fields that require numerical data without fractions,
+                                        such as counts, ages, and ID.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>NOT NULL</strong></td>
+                                    <td>Ensures that a column cannot have a NULL value.
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    id INT NOT NULL,\n" +
+                                            "    name STRING NOT NULL\n" +
+                                            ");"}/>
+                                        In the above table, the id and name columns cannot be left empty (NULL).
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>DEFAULT</strong></td>
+                                    <td>Provides a default value for a column when no value is specified.
+                                        <ShowCode code={"CREATE TABLE example (\n" +
+                                            "    id INT,\n" +
+                                            "    gender CHAR DEFAULT (M :L))\n" +
+                                            ");"}/>
+
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <strong className="nm4">ALTER</strong>
+                </li>
+                <li>
+                    <strong className="nm">DROP</strong>
+                    <h3>DROP DATABASE</h3>
+                    <ShowCode code={"DROP DATABASE _name;"}
+                    />
+                    <h3>DROP TABLE</h3>
+                    <ShowCode code={"DROP TABLE _name;"}
+                    />
+                </li>
+
+
+                <h2>Data Query Language (DQL)</h2>
+                <p>DQL is used to query the database and retrieve data.</p>
+
+
+                <li>
+                    <strong className="nm">SELECT</strong>: Retrieves data from the database.
+
+                    <ShowCode code={"//Here fetching whole table from database." +
+                        "\nSELECT * FROM table_name;"}/>
+                    <ShowCode code={"//Here fetching only 2 column from database." +
+                        "\nSELECT \n" +
+                        "(column_name1,column_name2)\n" +
+                        "FROM table_name;"}/>
+                    <h3>At this time,system provide only apply condition on one column.</h3>
+                    <ShowCode code={"//Here fetching whole table from database but applying condition on column." +
+                        "\nSELECT * " +
+                        "\nFROM table_name \nWHERE \ncolumn_name = (values:Degree);"}/>
+                </li>
 
                 <h2>Data Manipulation Language (DML)</h2>
                 <p>DML is used to insert, update, and delete data in the database.</p>
-                <div className="DML">
-                <ul className='DML-list'>
-                    <li >
-                        <strong className="nm">INSERT</strong>: Adds new data into the database.
-                        <ShowCode code={"INSERT INTO table_name (column1, column2) VALUES (value1:Degree, value2:Degree);"}/>
-                    </li>
-                    <li >
-                        <strong className="nm">UPDATE</strong>: Modifies existing data in the database.
-                        <ShowCode code={"UPDATE table_name SET column1 = value1 WHERE condition;"}/>
-                    </li>
-                    <li >
-                        <strong className="nm4">DELETE</strong>: Removes data from the database.
-                        <ShowCode code={"DELETE FROM table_name WHERE condition;"}/>
-                    </li>
-                </ul>
-                </div>
+                <li>
+                    <strong className="nm">INSERT</strong>: Adds new data into the database.
+                    <ShowCode
+                        code={"INSERT INTO table_name (column1, column2) VALUES (value1:Degree, value2:Degree);"}/>
+                </li>
+                <li>
+                    <strong className="nm4">UPDATE</strong>: Modifies existing data in the database.
+                    <ShowCode code={"UPDATE table_name SET column1 = value1 WHERE condition;"}/>
+                </li>
+                <li>
+                    <strong className="nm4">DELETE</strong>: Removes data from the database.
+                    <ShowCode code={"DELETE FROM table_name WHERE condition;"}/>
+                </li>
 
-                <h2>Transaction Control Language (TCL)</h2>
-                <p>TCL is used to manage transactions in the database.</p>
-                <div className="TCL">
-                <ul className='TCL-list' >
-                    <li >
-                        <strong className="nm4">COMMIT</strong>: Saves the transaction in the database.
-                        <ShowCode code={"COMMIT;"}/>
-                    </li>
-                    <li >
-                        <strong className="nm4">ROLLBACK</strong>: Reverts the transaction in the database.
-                        <ShowCode code={"ROLLBACK;"}/>
-                    </li>
-                    <li >
-                        <strong className="nm4">SAVEPOINT</strong>: Sets a savepoint within a transaction.
-                        <ShowCode code={"SAVEPOINT savepoint_name;"}/>
-                    </li>
-                </ul>
-                </div>
+
+                <h2>Other Helping Statement</h2>
+                <p>These helping statement are different to different in system.</p>
+                <li>
+                    <strong className="nm">RENAME</strong>: Change name of existing database name.
+                    <ShowCode
+                        code={"RENAME DATABASE "}/>
+                </li>
+                <li>
+                    <strong className="nm">SEARCH</strong>: Find database from login user container.
+                    <ShowCode code={"SEARCH DATABASE _db_name;"}/>
+                    <ShowCode code={"SEARCH TABLE _tb_name;"}/>
+                </li>
+                <li>
+                    <strong className="nm">USE</strong>: It use for select database.
+                    <ShowCode code={"USE DATABASE _database_name;"}/>
+                </li>
+                <li>
+                    <strong className="nm">SHOW</strong>
+                    <ShowCode code={"//It use for show all databases which belong to login user." +
+                        "\nSHOW DATABASE;"}/>
+                    <ShowCode code={"//It use for show all tables which belong to selected database." +
+                        "\nSHOW DATABASE;"}/>
+                </li>
+
+
             </div>
         </>
     );

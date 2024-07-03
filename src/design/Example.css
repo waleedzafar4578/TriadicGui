@@ -1,9 +1,9 @@
 /* src/styles.css */
 .code_show_main {
     margin: 1px ;
-    max-width: 60vw;
+    max-width: 80vw;
     flex-direction: column;
     padding: 2px;
     border-radius: 8px;
-
+    font-size: 30px;
 }
