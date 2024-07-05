@@ -151,20 +151,34 @@
     height: 150vh;
     background-color: #242424;
 }
-.nom_example table {
+.nom_example2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    margin-top: 20px;
+    width: 97%;
+    height: 150vh;
+    background-color: #242424;
+}
+.nom_example2 table {
     margin: 2%;
     border-collapse: collapse;
     width: 100%;
+
 }
 
-.nom_example th, td {
+.nom_example2 th, td {
+    border-radius: 15px;
     padding: 5px;
     text-align: left;
     font-size: 15px;
     border: 1px solid #c6f3f3;
 }
 
-.nom_example tr:hover {
+.nom_example2 tr:hover {
     background-color: rgba(159, 179, 159, 0.46);
 }
 

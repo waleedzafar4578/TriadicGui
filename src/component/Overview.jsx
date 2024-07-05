@@ -215,115 +215,147 @@ function Overview() {
                         </div>
                     </div>
                     <div className="nom_example1">
-                        <h1>How Automated The Normalization?</h1>
+                        <h1>How Automated Is Normalization In Triadic Engine?</h1>
 
                     </div>
-                    <div className="nom_example">
-                        <h3>Her assume this data in physical register.</h3>
+                    <div className="nom_example2">
+                        <h3>Lets assume this data in physical registers.</h3>
                         <table>
+                            <tbody>
                             <tr>
                                 <th>Cnic</th>
                                 <th>Name</th>
                                 <th>Phone</th>
                                 <th>Age</th>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#001</td>
                                 <td>example#1</td>
                                 <td>+92 123</td>
                                 <td>14</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#002</td>
                                 <td>example#2</td>
                                 <td>+92 123</td>
                                 <td>12</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#003</td>
                                 <td>example#3</td>
                                 <td>+92 123</td>
                                 <td>18</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#004</td>
                                 <td>example#4</td>
                                 <td>+92 123</td>
                                 <td>28</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#004</td>
                                 <td>example#5</td>
                                 <td>+92 123</td>
                                 <td>48</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#005</td>
                                 <td>example#6</td>
                                 <td>+92 123</td>
                                 <td>38</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#006</td>
                                 <td>example#7</td>
                                 <td>+92 123</td>
                                 <td>48</td>
                             </tr>
+                            </tbody>
 
                         </table>
-                        <h5>In Boolean database if we need insert data first resolve this duplication
-                            because here if we set cnic is primary then must resolve this then enter in system but in
-                            Triadic Logic we can insert in database and then you resolve in database any time.</h5>
+                        <h5>In a Boolean database, if we need to insert data, we must first resolve any duplication. For example,
+                            if we set a CNIC number as the primary key, we must resolve any duplication before
+                            entering the data into the system. However, in Triadic Logic, we can insert data into the database and resolve any issues at any time.</h5>
                         <h4>Insert data into Triadic Table</h4>
                         <table>
+                            <tbody>
                             <tr>
                                 <th>Cnic pk(T)</th>
                                 <th>Name</th>
                                 <th>Phone</th>
                                 <th>Age</th>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#001 :T</td>
                                 <td>example#1 :T</td>
                                 <td>+92 123 :T</td>
                                 <td>14 :T</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#002 :T</td>
                                 <td>example#2 :T</td>
                                 <td>+92 123 :T</td>
                                 <td>12 :T</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#003 :T</td>
                                 <td>example#3 :T</td>
                                 <td>+92 123 :T</td>
                                 <td>18 :T</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#004 :T</td>
                                 <td>example#4 :T</td>
                                 <td>+92 123 :T</td>
                                 <td>28 :T</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#004 :L</td>
                                 <td>example#5 :T</td>
                                 <td>+92 123 :T</td>
                                 <td>48 :T</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#005 :T</td>
                                 <td>example#6 :T</td>
                                 <td>+92 123 :T</td>
                                 <td>38 :T</td>
                             </tr>
+                            </tbody>
+                            <tbody>
                             <tr>
                                 <td>#006 :T</td>
                                 <td>example#7 :T</td>
                                 <td>+92 123 :T</td>
                                 <td>38 :T</td>
                             </tr>
+                            </tbody>
                         </table>
                         <h5>When find example#5 cnic then you can change,before this we able to see using cnic limit.</h5>
                     </div>

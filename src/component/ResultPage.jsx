@@ -136,7 +136,7 @@ function ResultPage() {
                         <p>CREATE TABLE: Used to create a new table within a database.</p>
                         <ShowCode code={"CREATE TABLE _tb_name (  _column_name DATATYPE CONSTRAINT );"}/>
                         <div className={"In_datatype"}>
-                            <h2>Suppoerted Datatypes</h2>
+                            <h2>Supported Datatypes</h2>
                             <table>
                                 <thead>
                                 <tr>
@@ -203,7 +203,7 @@ function ResultPage() {
                                 </tr>
                                 </tbody>
                             </table>
-                            <h2>Suppoerted Constrains</h2>
+                            <h2>Supported Constrains</h2>
                             <table>
                                 <thead>
                                 <tr>

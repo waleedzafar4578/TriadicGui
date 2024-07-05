@@ -57,8 +57,10 @@ img {
     display:flex;
     flex-direction: row;
     justify-content: center;
+
     align-items: center;
     margin: 30px;
+
 }
 .left{
     display: flex;
@@ -89,6 +91,7 @@ img {
     flex-direction: column;
     height: 500px;
     width: 500px;
+
 }
 .password , .userName , .confirmPassword{
     margin-top: 15px;
