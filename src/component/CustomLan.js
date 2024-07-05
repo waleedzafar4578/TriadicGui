@@ -3,6 +3,8 @@ const customLanguage = {
         root: [
 
             [/\bSELECT\b/, 'keyword'],
+            [/\bALTER\b/, 'keyword'],
+            [/\bADD\b/, 'keyword'],
             [/\bTRUNCATE\b/, 'keyword'],
             [/\bRENAME\b/, 'keyword'],
             [/\bFROM\b/, 'keyword'],
