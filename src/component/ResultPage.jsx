@@ -134,6 +134,7 @@ function ResultPage() {
                     <div className="Inm">
                         <strong className="Innm">TABLE</strong>
                         <p>CREATE TABLE: Used to create a new table within a database.</p>
+                        <h3>Only Inline Table Declaration Available</h3>
                         <ShowCode code={"CREATE TABLE _tb_name (  _column_name DATATYPE CONSTRAINT );"}/>
                         <div className={"In_datatype"}>
                             <h2>Supported Datatypes</h2>
@@ -218,7 +219,7 @@ function ResultPage() {
                                         Uniquely identifies each row in a table.
                                         Each table can have only one primary key, which can consist of one or more
                                         columns.
-                                        <h3><br/>It work like old sql:</h3>
+                                        <h3><br/>It work like old sql primary key:</h3>
                                         <ShowCode code={"CREATE TABLE example (\n" +
                                             "    id INT PRIMARY KEY,\n" +
                                             "    gender CHAR\n" +
@@ -295,17 +296,6 @@ function ResultPage() {
                                         In the above table, the id and name columns cannot be left empty (NULL).
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><strong>DEFAULT</strong></td>
-                                    <td>Provides a default value for a column when no value is specified.
-                                        <ShowCode code={"CREATE TABLE example (\n" +
-                                            "    id INT,\n" +
-                                            "    gender CHAR DEFAULT (M :L))\n" +
-                                            ");"}/>
-
-                                    </td>
-                                </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -313,7 +303,12 @@ function ResultPage() {
                 </li>
 
                 <li>
-                    <strong className="nm4">ALTER</strong>
+                    <strong className="nm">ALTER</strong>
+                    <h3>ADD COLUMN Into Table</h3>
+                    <ShowCode code={"ALTER TABLE _table_name ADD _column_name DATATYPE;"}/>
+
+                    <h3>Drop Column From Table</h3>
+                    <ShowCode code={"ALTER TABLE _table_name DROP COLUMN _column_name ;"}/>
                 </li>
                 <li>
                     <strong className="nm">DROP</strong>
@@ -322,6 +317,15 @@ function ResultPage() {
                     />
                     <h3>DROP TABLE</h3>
                     <ShowCode code={"DROP TABLE _name;"}
+                    />
+                </li>
+                <li>
+                    <strong className="nm">TRUNCATE</strong>
+                    <h3>DATABASE</h3>
+                    <ShowCode code={"TRUNCATE DATABASE;"}
+                    />
+                    <h3>TABLE</h3>
+                    <ShowCode code={"TRUNCATE TABLE _name;"}
                     />
                 </li>
 
@@ -340,9 +344,71 @@ function ResultPage() {
                         "(column_name1,column_name2)\n" +
                         "FROM table_name;"}/>
                     <h3>At this time,system provide only apply condition on one column.</h3>
+                    <p><br/>It get those column values where value and degree match</p>
                     <ShowCode code={"//Here fetching whole table from database but applying condition on column." +
                         "\nSELECT * " +
-                        "\nFROM table_name \nWHERE \ncolumn_name = (values:Degree);"}/>
+                        "\nFROM table_name \nWHERE \ncolumn_name Operator (values:Degree);"}/>
+                    <p><br/>It get those column values where value match</p>
+                    <ShowCode code={"//Here fetching whole table from database but applying condition on column." +
+                        "\nSELECT * " +
+                        "\nFROM table_name \nWHERE \ncolumn_name = (values);"}/>
+                    <p><br/>It get those column values where degree match</p>
+                    <ShowCode code={"//Here fetching whole table from database but applying condition on column." +
+                        "\nSELECT * " +
+                        "\nFROM table_name \nWHERE \ncolumn_name = (Degree);"}/>
+
+                    <h2>Supported Operator</h2>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Example</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>Equal</strong></td>
+                            <td>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE NAME =(Mia);"}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Not Equal</strong></td>
+                            <td>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE NAME !=(Mia);"}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Less Then </strong></td>
+                            <td>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE ID < (50:T);"}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Less Then  Equal</strong></td>
+                            <td>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE ID <= (30:F);"}/>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE ID <= (50);"}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Greater Then </strong></td>
+                            <td>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE ID > (50:T);"}/>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE ID > (90:L);"}/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Greater Then Equal </strong></td>
+                            <td>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE ID < (50:T);"}/>
+                                <ShowCode code={"SELECT * FROM STUDENT WHERE ID < (50);"}/>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
                 </li>
 
                 <h2>Data Manipulation Language (DML)</h2>
