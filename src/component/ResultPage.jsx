@@ -416,15 +416,26 @@ function ResultPage() {
                 <li>
                     <strong className="nm">INSERT</strong>: Adds new data into the database.
                     <ShowCode
-                        code={"INSERT INTO table_name (column1, column2) VALUES (value1:Degree, value2:Degree);"}/>
+                        code={"INSERT INTO table_name (column1, column2) VALUES (value1:Degree, value2:Degree);"}
+                    />
+
+                    <ShowCode
+                        code={"INSERT INTO STUDENT(ID,NAME,GENDER,Background,Fee,Allowed) VALUES \n" +
+                            "( 4 :L , 'ALI'     :T  , 'M' :T , 'Vip person'     :L , 200.1 :T , true  :T   ),\n" +
+                            "( 5 :F , 'Nomi'    :T  , 'M' :T , 'Vip person1'    :L , 200.1 :T , true  :T   ),\n" +
+                            "( 6 :T , 'Mahnoor' :F  , 'F' :L , 'Nothing person' :L , 100.0 :L , false :L   );"}
+                    />
                 </li>
                 <li>
-                    <strong className="nm4">UPDATE</strong>: Modifies existing data in the database.
+                    <strong className="nm">UPDATE</strong>: Modifies existing data in the database.
                     <ShowCode code={"UPDATE table_name SET column1 = value1 WHERE condition;"}/>
+                    <ShowCode code={"UPDATE MARKS SET Mark = (10.5 :L) WHERE ID = (1:T);"}/>
                 </li>
                 <li>
-                    <strong className="nm4">DELETE</strong>: Removes data from the database.
+                    <strong className="nm">DELETE</strong>: Removes data from the database.
                     <ShowCode code={"DELETE FROM table_name WHERE condition;"}/>
+                    <ShowCode code={"DELETE FROM MARKS WHERE ID > (2);"}/>
+                    <ShowCode code={"DELETE FROM MARKS;"}/>
                 </li>
 
 
@@ -432,8 +443,12 @@ function ResultPage() {
                 <p>These helping statement are different to different in system.</p>
                 <li>
                     <strong className="nm">RENAME</strong>: Change name of existing database name.
+                    <h3>DATABASE</h3>
                     <ShowCode
-                        code={"RENAME DATABASE "}/>
+                        code={"RENAME DATABASE _old_database_name,_new_database_name;"}/>
+                    <h3>TABLE</h3>
+                    <ShowCode
+                        code={"RENAME TABLE _old_table_name,_new_table_name;"}/>
                 </li>
                 <li>
                     <strong className="nm">SEARCH</strong>: Find database from login user container.
