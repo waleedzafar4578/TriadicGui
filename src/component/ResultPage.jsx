@@ -464,7 +464,7 @@ function ResultPage() {
                     <ShowCode code={"//It use for show all databases which belong to login user." +
                         "\nSHOW DATABASE;"}/>
                     <ShowCode code={"//It use for show all tables which belong to selected database." +
-                        "\nSHOW DATABASE;"}/>
+                        "\nSHOW TABLE;"}/>
                 </li>
 
 
