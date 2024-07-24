@@ -16,7 +16,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.19",
     "bootstrap": "^5.3.3",
-    "monaco-editor": "^0.47.0",
+    "monaco-editor": "^0.44.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
